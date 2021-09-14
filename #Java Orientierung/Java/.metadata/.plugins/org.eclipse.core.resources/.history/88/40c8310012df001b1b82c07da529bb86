@@ -1,0 +1,135 @@
+import java.util.Scanner;
+
+public class copy {
+
+	public static void main(String[] args) {
+		// Manual input for scanner
+		Scanner scan = new Scanner(System.in);
+
+		// Check first day in Month
+		System.out.println("Welcher Tag ist der erste im Monat?");
+		System.out.println("Format: Mo, Di, Mi, ...");
+		String dayName = scan.next();
+
+		// initialize the Variable day for the first startday in the month
+		int day = 0;
+
+		// Check current month
+		System.out.println("Gib bitte den Monat als Zahl ein:");
+		int month = scan.nextInt();
+
+		// initializes the variable to later output the days of the month
+		int monthDay = 31;
+
+		// Check the actual Year
+		System.out.println("Welches Jahr haben wir?");
+		int year = scan.nextInt();
+
+		// ----------------------------------------------------------------------------
+		// Checks the amount of days of the month, based on the month and leap year
+
+		switch (month) {
+		// reads out the variables for the months January, March, May, July, August,
+		// October, December
+		case 1, 3, 5, 7, 8, 10, 12:
+			monthDay = 31;
+			break;
+		// Calculate February - leap years
+		case 2:
+
+			// calculates the rest value from the year to set the value to true or false
+			// values from
+			// https://www.guter-rat.de/magazin/ratgeber/verbrauchertipps/schaltjahre-berechnen-356
+			boolean a = (year % 4) == 0;
+			boolean b = (year % 100) == 0;
+			boolean c = (year % 400) == 0;
+
+			// if a/4 and b can' t be calculated /100 or c/400, then a leap year is
+			if ((a == true) && (b == false) || (c == true)) {
+				monthDay = 29;
+			}
+			// else output 28 days for february
+			else {
+				monthDay = 28;
+			}
+			break;
+
+		// reads out the variables for months April, June, Septembre, Novembre
+		case 4, 6, 9, 11:
+			monthDay = 30;
+			break;
+		}
+
+		// end amount of days
+		// -----------------------------------------------------
+		// Defines the day of the week using the string dayName and writes it into int day
+
+		switch (dayName) {
+		case "Mo", "mo", "Montag", "1":
+			day = 1;
+			break;
+		case "Di", "di", "Dienstag", "2":
+			day = 2;
+			break;
+		case "Mi", "mi", "Mittwoch", "3":
+			day = 3;
+			break;
+		case "Do", "do", "Donnerstag", "4":
+			day = 4;
+			break;
+		case "Fr", "fr", "Freitag", "5":
+			day = 5;
+			break;
+		case "Sa", "sa", "Samstag", "6":
+			day = 6;
+			break;
+		case "So", "so", "Sonntag", "7":
+			day = 7;
+			break;
+		}
+		// end of define int Day
+		// -----------------------------------------------------
+
+		// Create Calendar:
+		// Calendar Head
+		System.out.println("| MO | DI | MI | DO | FR | SA | SO |");
+		System.out.println("------------------------------------");
+
+		// defines the first day of each month
+
+		int firstDay = 1;
+
+		for (int b = 0; b < (monthDay / 7); b++) {
+			// counts to 7 and ends the cycle
+			for (int i = 0; i < 7; i++) {
+				// use the variable day to count how many days have to be skipped
+				for (int j = firstDay + i; j <= day; j++, i++) {
+					System.out.print("     ");
+				}
+
+				//
+				System.out.printf("%s%2d%s", "| ", firstDay, " ");
+
+				// adds one counter at each run
+				firstDay++;
+
+			}
+			System.out.println("|");
+
+		}
+
+		int remDays = monthDay - firstDay;
+
+		System.out.println();
+		System.out.println(remDays);
+		System.out.println();
+		System.out.println();
+
+		for (int i = 0; i <= remDays; i++) {
+
+			System.out.print("| " + firstDay + " ");
+			firstDay++;
+		}
+		System.out.println("|");
+	}
+}
