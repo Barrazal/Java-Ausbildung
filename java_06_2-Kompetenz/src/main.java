@@ -6,42 +6,70 @@ public class main {
         //Wenn du eine andere verwendest bitte in einer Markdown Datei deine Wahl angeben ;)
 
         //Nutze StringBuilder!
+        Scanner scan = new Scanner(System.in);
 
 
+        char[] clear = {'A', 'B', 'C', 'E', 'G', 'H', 'I', 'L', 'O', 'S', 'T'};
+        char[] clearLow = {'a', 'b', 'c', 'e', 'g', 'h', 'i', 'l', 'o', 's', 't'};
+        char[] leet = {'@', '8', '(', '3', '6', '#', '!', '1', '0', '$', '7'};
 
+        System.out.println("Gib bitte deinen text in Klarschrift ein!");
+           StringBuilder stringB1 = new StringBuilder(scan.nextLine());
+        //   StringBuilder stringB1 = new StringBuilder("Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz");
 
+        for (int i = 0; i < stringB1.length(); i++) {
+            boolean found = false;
+            int k = 1;
 
-        //Uebung buch seite 142:
-        String linuxPfad = "/media/usbstick/daten/unfug";
-        String windowsPfad ="";
-        System.out.println("vorher : " + linuxPfad);
-        System.out.println("vorher : " + windowsPfad);
-
-
-        int pos = 0;        //Aktuelle Position im String
-        int oldpos = 0;     //wo wir zueltz waren
-        //wiederholen, wenn es noch weitere Schrägstriche gibt
-
-        while(pos>=0){
-            pos = linuxPfad.indexOf('/',oldpos);
-            if(pos>=0){
-                //Der Windows-Pfad ist der alte
-                //plus dem Backslash
-                //und dem Pfad zwischen den Schrägstrichen.
-                if (pos>oldpos){
-                    windowsPfad = windowsPfad + '\\' + linuxPfad.substring(oldpos,pos);
+            for (int j = 0; j < clear.length; j++) {
+                if (stringB1.charAt(i) == clear[j] || stringB1.charAt(i) == clearLow[j]) {
+                    stringB1.setCharAt(i, leet[j]);
+                    found = true;
                 }
-                oldpos = pos+1;
+                /*
+                else if ((k == clear.length) && (stringB1.charAt(i) != ' ') && !found) {
+                    stringB1.setCharAt(i,'-');
+                }
+                */
+                k++;
             }
         }
-        //Sollte nach dem letzten Schrägstrich noch ein Pfad
-        //kommen, muss der natürlich auch übernommen werden.
-        if (oldpos<linuxPfad.length()){
-            windowsPfad = windowsPfad + '\\' + linuxPfad.substring(oldpos,linuxPfad.length());
-        }
-        System.out.println("nachher : " + linuxPfad);
-        System.out.println("nachher : " + windowsPfad);
 
+
+        /*
+        for (int i = 0; i < stringB1.length(); i++) {
+            for (int j = 0; j < clear.length; j++) {
+                if (stringB1.charAt(i) == clear[j]) {
+                    stringB1.setCharAt(i, leet[j]);
+
+
+                }
+            }
+        }
+
+        */
+        System.out.println();
+        System.out.println();
+        System.out.println("Hier deine Leetspeak ausgabe:");
+        System.out.println(stringB1);
+
+/*
+        String scannerIn = "ZYX WVU TSR QPO NML KJI HGF EDC BA";
+        scannerIn = scannerIn.toUpperCase();
+        StringBuilder stringB1 = new StringBuilder(scannerIn);
+
+        char[] leetText = scannerIn.toCharArray();
+
+        for (int i = 0; i <leetText.length; i++){
+
+            for (int j = 0; j < clear.length; j++){
+                if (leetText[i] == clear[j]){
+                    leetText[i] = leet[j];
+                }
+            }
+        }
+        System.out.println(leetText);
+*/
     }
 }
 
