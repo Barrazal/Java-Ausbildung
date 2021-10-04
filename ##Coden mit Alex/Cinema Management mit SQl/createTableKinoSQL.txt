@@ -1,0 +1,9 @@
+CREATE TABLE showroom (id integer PRIMARY KEY, location varchar(32));
+
+CREATE TABLE movie (id integer PRIMARY KEY NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), title varchar(32), story_title varchar(32), genre varchar(32));
+
+CREATE TABLE seat (id integer PRIMARY KEY NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), showroom_id integer, FOREIGN KEY (showroom_id) REFERENCES showroom(id), row integer, number integer);
+
+CREATE TABLE show (id integer PRIMARY KEY NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), movie_id integer, FOREIGN KEY (movie_id) REFERENCES movie(id), showroom_id integer, FOREIGN KEY (showroom_id) REFERENCES showroom(id), show_date date);
+
+CREATE TABLE reservation (id integer PRIMARY KEY NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1), seat_id integer, FOREIGN KEY (seat_id) REFERENCES seat(id), show_id integer, FOREIGN KEY (show_id) REFERENCES show(id));

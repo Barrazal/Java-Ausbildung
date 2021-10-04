@@ -33,16 +33,13 @@ public class selectionSort {
                     unsorted[j] = safeNumb;
                     System.out.println("tausche: "+ unsorted[i]+ " mit "+ unsorted[j]);
                 }
-
             }
-
             System.out.println(Arrays.toString(unsorted));
             System.out.println();
 
             //Erhoehe den wert von sortLength um 1, damit der entsprechende Index bei der durchsuchung übersprungen wird (gilt als Sortiert)
             sortLength++;
         }
-
         System.out.println("Nach der Sortierung: ");
         System.out.println(Arrays.toString(unsorted));
     }
@@ -50,12 +47,14 @@ public class selectionSort {
 
 
     /*
+// siehe https://studyflix.de/informatik/selectionsort-1323
 
-   erstelle neuen Array
+
+    erstelle neuen Array
     erstelle Variable zum speichern
     erstelle Variable für die Position des zu speichernden wertes
 
-Führe eine Schleife aus, um den Array zu durchsuchen
+    Führe eine Schleife aus, um den Array zu durchsuchen
     Führe eine Schleife aus, die den Array nach dem kleinsten Wert durchsucht.
     Wenn der durchsuchte Index kleiner als die gespeicherte Variable ist
     dann ersetze diese durch den aktuellen Wert und ändere den aktuellen Index mit dem Alten Wert
