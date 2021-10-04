@@ -1,21 +1,19 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+
 
 public class gameOfLive {
     public static void main(String[] args) {
 
-
-        int tablerow = 5;
-        int tablecolumn = 5;
-        int gameruns = 5;
+        int tablerow = 50;
+        int tablecolumn = 100;
+        int gameruns = 20;
 
         char[][] table = onStartup(tablerow, tablecolumn);
         char[][] table2 = new char[tablerow][tablecolumn];
 
-        //    int neighbours = neighbours(table, actualRow, actualColumn);
-
         boolean isTabAct = true;
         boolean isTab2Act = false;
-
 
         for (int i = 0; i < gameruns; i++) {
             if (isTabAct) {
@@ -23,8 +21,9 @@ public class gameOfLive {
                     for (int row = 0; row < table[column].length; row++) {
                         System.out.print(table[column][row]);
 
-                        int neighbours = neighbours(table, row, column);
-                        table2[column][row] = lifeRules(table[column][row],neighbours);
+                        int neighboursNum = neighbours(table, column, row);
+                        char lifeRules = lifeRules(table[column][row], neighboursNum);
+                        table2[column][row] = lifeRules;
                     }
                     System.out.println();
                 }
@@ -39,8 +38,9 @@ public class gameOfLive {
                     for (int row = 0; row < table2[column].length; row++) {
                         System.out.print(table2[column][row]);
 
-                        int neighbours = neighbours(table2, row, column);
-                        table[column][row] = lifeRules(table2[column][row],neighbours);
+                        int neighboursNum = neighbours(table2, column, row);
+                        char lifeRules = lifeRules(table[column][row], neighboursNum);
+                        table[column][row] = lifeRules;
                     }
                     System.out.println();
                 }
@@ -56,10 +56,13 @@ public class gameOfLive {
 
     //If the Program is executed at the first Time --- initialize the First complete Overview
     private static char[][] onStartup(int tablerow, int tablecolumn) {
+
+
         //erstellt einen zufälligen Zähler, welcher den Multi Array beliebig mit # oder . befüllt
         char[][] startTable = new char[tablerow][tablecolumn];
 
         int randCell = (int) (Math.random() * ((tablerow * tablecolumn)) - 0);
+
         for (int i = 0; i < randCell; i++) {
             boolean zaehler1 = false;
             while (!zaehler1) {
@@ -71,6 +74,24 @@ public class gameOfLive {
                 }
             }
         }
+
+
+        // Fixed Parameters for first Run!
+        //   int randCell = 4;
+        //   int randTablerow = 0;
+        //   int randTablecolumn = 0;
+        //   for (int i = 0; i < randCell; i++) {
+        //       boolean zaehler1 = false;
+        //       while (!zaehler1) {
+        //           randTablecolumn++;
+        //           randTablerow++;
+        //           if (startTable[randTablerow][randTablecolumn] != '@') {
+        //               startTable[randTablerow][randTablecolumn] = '@';
+        //               zaehler1 = true;
+        //           }
+        //       }
+        //   }
+
         for (int i = 0; i < startTable.length; i++) {
             for (int j = 0; j < startTable[i].length; j++) {
                 if (startTable[i][j] != '@') {
@@ -78,32 +99,59 @@ public class gameOfLive {
                 }
             }
         }
+
+
         return startTable;
     }
 
     //How much neighbours have a Cell? --- uses per Cell!
-    private static int neighbours(char[][] table, int inRow, int inColumn) {
-        int neighboursSum = -1;
-        try {
-            for (int i = inRow; (i - 1) <= (inRow + 1); i++) {
-                for (int j = inColumn; (j - 1) <= (inColumn + 1); i++) {
-                    if (table[i][j] == '@') {
-                        neighboursSum++;
+    private static int neighbours(char[][] table, int inColumn, int inRow) {
+        int neighboursSum = 0;
+        int locCounter = 0;
+        int locColumn = inColumn - 1;
+        int maxColumn = inColumn + 1;
+        do {
+            int locRow = inRow - 1;
+            int maxRow = inRow + 1;
+            do {
+                try {
+                    if (table[locColumn][locRow] == '@') {
+                        if (locColumn == inColumn && locRow == inRow) {
+                            locCounter++;
+                        } else {
+                            neighboursSum++;
+                            locCounter++;
+                        }
+                    } else {
+                        locCounter++;
                     }
+                } catch (Exception ex) {
+                    locCounter++;
                 }
-            }
-        } catch (Exception ex) {
-       //     System.out.println("Error at private Neighbours: " + ex.getMessage());
-        }
+                locRow++;
+            } while (locRow <= maxRow);
+            locColumn++;
+        } while (locColumn <= maxColumn);
+
+   //    System.out.print(" " + neighboursSum + "    ");
         return neighboursSum;
     }
 
     /* Liferules used an char: --- uses per Cell!*/
     private static char lifeRules(char cell, int neighbours) {
-        if (((cell != '@') && neighbours == 3) || ((cell == '@') && (neighbours == 2 || neighbours == 3))) {
-            cell = '@';
-        } else if ((cell != '@' && neighbours < 2) || (cell != '@' && neighbours > 3)) {
-            cell = '-';
+        if (cell == '@') {
+            if (neighbours == 2 || neighbours == 3) {
+                cell = '@';
+            } else if (neighbours < 2) {
+                cell = '-';
+            } else if (neighbours > 3) {
+                cell = '-';
+
+            } else if (cell != '@') {
+                if (neighbours == 3) {
+                    cell = '@';
+                }
+            }
         }
         return cell;
     }
