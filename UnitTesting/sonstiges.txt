@@ -1,0 +1,4 @@
+https://junit.org/junit5/docs/current/user-guide/
+
+Übung:
+Game Of Life Unit testen
