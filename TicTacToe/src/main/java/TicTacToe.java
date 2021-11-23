@@ -3,9 +3,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToe {
-    public static int activeplayer = 0;      // 0== Spieler, 1 == Computer
-    public static int winner;               // contains the Playerwin- int
-    public static Scanner scanner = new Scanner(System.in);
+     static int activeplayer = 0;      // 0== Spieler, 1 == Computer
+     static int winner;               // contains the Playerwin- int
+     static Scanner scanner = new Scanner(System.in);
 
 
     public static void main(String[] args) {

@@ -33,7 +33,7 @@ public class sumofTwo {
         hash1.addAll(Arrays.asList(b_int));
 
         // run
-        while (!out && count < hash1.size()) {
+        while (out == false && count < hash1.size()) {
             Integer v_int = Integer.valueOf(v);
             Integer a_int = Integer.valueOf(a[count]);
             Integer i = v_int - a_int;
