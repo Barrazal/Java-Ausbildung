@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="person_test" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-24T14:25:51" hostname="DESKTOP-LLOP297" time="0.023">
+  <properties/>
+  <testcase name="Check if a Person with LastName, birthDate and gender was correctly created" classname="person_test" time="0.017"/>
+  <testcase name="Check if a Person with first and LastName was correctly created" classname="person_test" time="0.0"/>
+  <testcase name="Check if a Person with all Avilable values was correctly created" classname="person_test" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
