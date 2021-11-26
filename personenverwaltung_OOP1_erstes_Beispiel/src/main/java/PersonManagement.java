@@ -8,10 +8,12 @@ public class PersonManagement {
     public PersonManagement() {
         personList = new HashMap<>();
     }
-        public void createPerson(Person newPerson) {
-        personList.put(newPerson.getLastName(),newPerson);
+
+    public void createPerson(Person newPerson) {
+        personList.put(newPerson.getLastName(), newPerson);
         personCount++;
     }
-    private  void splitAddress(String address) {
+
+    private void splitAddress(String address) {
     }
 }
