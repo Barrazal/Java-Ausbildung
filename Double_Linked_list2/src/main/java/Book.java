@@ -31,6 +31,10 @@ public class Book {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public Book getNextBook() {
         return nextBook;
     }
@@ -45,6 +49,11 @@ public class Book {
 
     public void setPrevBook(Book prevBook) {
         this.prevBook = prevBook;
+    }
+
+    public void resetConnection(){
+        this.prevBook = null;
+        this.nextBook = null;
     }
 
     public String bookOutput() {

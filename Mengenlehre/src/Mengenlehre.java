@@ -22,7 +22,7 @@ public class Mengenlehre {
     }
 
     private static HashSet<Integer> unificationQuantity(Integer[] a, Integer[] b, Integer[] c) {
-        HashSet<Integer> mergNum = new HashSet<Integer>();
+        HashSet<Integer> mergNum = new HashSet<>();
         mergNum.addAll(Arrays.asList(a));
         mergNum.addAll(Arrays.asList(b));
         mergNum.addAll(Arrays.asList(c));
@@ -37,7 +37,7 @@ public class Mengenlehre {
     //}
 
     private static HashSet<Integer> intersections(Integer[] a, Integer[] b, Integer[] c) {
-        HashSet<Integer> resNumb = new HashSet<Integer>();
+        HashSet<Integer> resNumb = new HashSet<>();
         resNumb.addAll(Arrays.asList(a));
         resNumb.retainAll(Arrays.asList(b));
         resNumb.retainAll(Arrays.asList(c));
@@ -46,7 +46,7 @@ public class Mengenlehre {
 
 
     private static HashSet<Integer> differences(Integer[] one, Integer[] two, Integer[] three) {
-        HashSet<Integer> resNumb = new HashSet<Integer>();
+        HashSet<Integer> resNumb = new HashSet<>();
         resNumb.addAll(Arrays.asList(one));
         resNumb.removeAll(Arrays.asList(two));
         resNumb.removeAll(Arrays.asList(three));

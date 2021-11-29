@@ -58,7 +58,7 @@ public class BookList {
 
     public void output() {
         Book outputAll = start.getNextBook();
-        System.out.print("\n" + listName + ", Bookcount: " + listCount);
+        System.out.print("\n\n" + listName + ", Bookcount: " + listCount);
         while (outputAll.getNextBook() != null) {
             System.out.print(outputAll.bookOutput());
             outputAll = outputAll.nextBook;
@@ -106,47 +106,50 @@ public class BookList {
     }
 
     public void delListAfter(Integer id) {
-        Book deleteAfter = start.getNextBook();
-
+        Book actualBook = start.getNextBook();
         Book saveNext;
-        Book deleteBefore;
 
-        if (deleteAfter.nextBook == null) {
-            return;
-        }
-        while (deleteAfter.getId() != id) {
-            deleteAfter = deleteAfter.getNextBook();
-        }
-        saveNext = deleteAfter.getNextBook();
-        deleteAfter.setNextBook(null);
+        for (int i = 0; i < listCount; i++) {
+            if (i < id) {
+                actualBook = actualBook.getNextBook();
 
-        while (saveNext != null) {
-            deleteBefore = saveNext.getNextBook();
-            deleteAfter = saveNext.getPrevBook();
-
-            saveNext = saveNext.getNextBook();
-
-            deleteBefore.setPrevBook(null);
-            deleteAfter.setNextBook(null);
-        }
-
-    }
-
-    public void delListAfter_2(Integer id) {
-        Book deleteAfter = start.getNextBook();
-
-        Book saveNext;
-        Book deleteBefore;
-
-        if (deleteAfter.nextBook == null) {
-            return;
-        }
-
-        for (int i = 0; i < listCount){
-            if (i != id){
-
+            } else if (i >= id && actualBook.getNextBook() != null) {
+                if (i == id) {
+                    saveNext = actualBook.getNextBook();
+                    actualBook.setNextBook(null);
+                    actualBook = saveNext;
+                    listCount--;
+                } else {
+                    saveNext = actualBook.getNextBook();
+                    actualBook.setNextBook(null);
+                    actualBook.setPrevBook(null);
+                    actualBook = saveNext;
+                    listCount--;
+                }
+            } else if (actualBook.getId() == null) {
+                return;
             }
         }
     }
 
+    public void delete(Integer id) {
+        Book actualBook = start.getNextBook();
+        Book saveBefore;
+        Book saveAfter;
+
+        while (actualBook.getId() != id && actualBook.getNextBook() != null) {
+            actualBook = actualBook.getNextBook();
+        }
+        saveBefore = actualBook.getPrevBook();
+
+        saveAfter = actualBook.getNextBook();
+
+        actualBook.setNextBook(null);
+        actualBook.setPrevBook(null);
+
+        saveAfter.setPrevBook(saveBefore);
+
+        saveBefore.setNextBook(saveAfter);
+        listCount--;
+    }
 }
