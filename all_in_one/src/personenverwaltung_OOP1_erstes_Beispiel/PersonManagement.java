@@ -1,3 +1,5 @@
+package personenverwaltung_OOP1_erstes_Beispiel;
+
 import java.util.HashMap;
 
 public class PersonManagement {

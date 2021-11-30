@@ -8,7 +8,13 @@ public class BookList {
     private int listCount = 0;
     private String listName;
 
-
+    public BookList() {
+        start = new Book();
+        end = new Book();
+        start.nextBook = end;
+        end.prevBook = start;
+        this.listName = null;
+    }
     public BookList(String listName) {
         start = new Book();
         end = new Book();
@@ -158,5 +164,13 @@ public class BookList {
 
         saveBefore.setNextBook(saveAfter);
         listCount--;
+    }
+
+    public Book getEnd() {
+        return end;
+    }
+
+    public int getListCount() {
+        return listCount;
     }
 }

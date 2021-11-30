@@ -1,3 +1,5 @@
+package personenverwaltung_OOP1_erstes_Beispiel;
+
 public class Person {
     private String firstName;
     private String lastName;

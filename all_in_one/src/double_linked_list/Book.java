@@ -58,7 +58,7 @@ public class Book {
     }
 
     public String bookOutput() {
-        return "\nid: " + id +
+        return "id: " + id +
                 ", name: " + name +
                 ", isbn: " + isbn +
                 ", available: " + available +

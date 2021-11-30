@@ -1,3 +1,5 @@
+package personenverwaltung_OOP1_erstes_Beispiel;
+
 public class PersonTestBench {
     public static void main(String[] args) {
 
