@@ -1,3 +1,5 @@
+package java_06_x;
+
 import java.util.Scanner;
 
 public class main {

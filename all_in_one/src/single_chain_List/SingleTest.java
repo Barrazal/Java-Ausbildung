@@ -1,14 +1,16 @@
-import org.junit.jupiter.api.Test;
+package single_chain_List;
+
+//import org.junit.jupiter.api.Test;
 
 public class SingleTest {
-    @Test
-    void testSimpleMultiplocation(){
-        int a = 3;
-        int b = 4;
-        assertEquals(12,MathHelper.Multiply(a, b));
-    }
+  //  @Test
+ //  void testSimpleMultiplocation(){
+ //      int a = 3;
+ //      int b = 4;
+ //      assertEquals(12,MathHelper.Multiply(a, b));
+ //  }
 
-    private void assertEquals(int i, Object multiply) {
-    }
+ //  private void assertEquals(int i, Object multiply) {
+ //  }
 
 }

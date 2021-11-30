@@ -1,10 +1,11 @@
 // Referenz der Uebung: https://www.straub.as/c-cpp-qt-fltk/c/double-linked-list.html#:~:text=Eine%20doppelt%20verkettete%20Liste%20ist,auf%20das%20vorhergehende%20Element%20zeigt.
 
 package double_linked_list;
+
 public class BookList {
     private Book start;
     private Book end;
-    private int listCount;
+    private int listCount = 0;
     private String listName;
 
 
@@ -107,26 +108,32 @@ public class BookList {
 
     public void delListAfter(Integer id) {
         Book actualBook = start.getNextBook();
+        Book lastBook = end.getPrevBook().getNextBook();
         Book saveNext;
+        int localcount = 0;
+        id--;
 
         for (int i = 0; i < listCount; i++) {
             if (i < id) {
                 actualBook = actualBook.getNextBook();
+                localcount++;
+            } else if (i == id) {
+                saveNext = actualBook.getNextBook();
+                actualBook.setNextBook(lastBook);
+                lastBook.setPrevBook(actualBook);
+                actualBook = saveNext;
+                localcount++;
+            } else if (i >= id && actualBook.getNextBook() != end) {
 
-            } else if (i >= id && actualBook.getNextBook() != null) {
-                if (i == id) {
-                    saveNext = actualBook.getNextBook();
-                    actualBook.setNextBook(null);
-                    actualBook = saveNext;
-                    listCount--;
-                } else {
-                    saveNext = actualBook.getNextBook();
-                    actualBook.setNextBook(null);
-                    actualBook.setPrevBook(null);
-                    actualBook = saveNext;
-                    listCount--;
-                }
-            } else if (actualBook.getId() == null) {
+                saveNext = actualBook.getNextBook();
+                saveNext.setPrevBook(null);
+                actualBook.setNextBook(null);
+                actualBook.setPrevBook(null);
+                actualBook = saveNext;
+
+
+            } else if (actualBook.getNextBook() == end) {
+                this.listCount = localcount;
                 return;
             }
         }

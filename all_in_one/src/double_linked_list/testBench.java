@@ -78,30 +78,31 @@ public class testBench {
 
 
         shelf5.output();
-        shelf5.delListAfter(8);
+        shelf5.delListAfter(7);
         shelf5.output();
+        System.out.println();
         shelf5.outputReverse();
 
 
-        System.out.println();
-        System.out.println();
-
-        BookList shelf6 = new BookList("shelf6");
-        shelf6.add(1, "delete1", "DE-123-GA412-fads3", true);
-        shelf6.add(2, "delete2", "DE-123-GA412-fads3", true);
-        shelf6.add(3, "delete3", "DE-123-GA412-fads3", true);
-        shelf6.add(4, "delete4", "DE-123-GA412-fads3", true);
-        shelf6.add(5, "delete5", "DE-123-GA412-fads3", true);
-        shelf6.add(6, "delete6", "DE-123-GA412-fads3", true);
-        shelf6.add(7, "delete7", "DE-123-GA412-fads3", true);
-        shelf6.add(8, "delete8", "DE-123-GA412-fads3", true);
-
-        shelf6.delete(1);
-        shelf6.delete(3);
-        shelf6.delete(5);
-        shelf6.delete(7);
-        shelf6.output();
-        shelf6.outputReverse();
+  //      System.out.println();
+  //      System.out.println();
+//
+  //      BookList shelf6 = new BookList("shelf6");
+  //      shelf6.add(1, "delete1", "DE-123-GA412-fads3", true);
+  //      shelf6.add(2, "delete2", "DE-123-GA412-fads3", true);
+  //      shelf6.add(3, "delete3", "DE-123-GA412-fads3", true);
+  //      shelf6.add(4, "delete4", "DE-123-GA412-fads3", true);
+  //      shelf6.add(5, "delete5", "DE-123-GA412-fads3", true);
+  //      shelf6.add(6, "delete6", "DE-123-GA412-fads3", true);
+  //      shelf6.add(7, "delete7", "DE-123-GA412-fads3", true);
+  //      shelf6.add(8, "delete8", "DE-123-GA412-fads3", true);
+//
+  //      shelf6.delete(1);
+  //      shelf6.delete(3);
+  //      shelf6.delete(5);
+  //      shelf6.delete(7);
+  //      shelf6.output();
+  //      shelf6.outputReverse();
 
     }
 

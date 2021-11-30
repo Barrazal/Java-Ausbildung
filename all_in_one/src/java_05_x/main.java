@@ -1,3 +1,5 @@
+package java_05_x;
+
 import java.util.Scanner;
 import java.util.Random;
 
