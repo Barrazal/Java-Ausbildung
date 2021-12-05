@@ -1,7 +1,7 @@
 package stack_java07;
 
-import double_linked_list.Book;
-import double_linked_list.BookList;
+import double_linked_lists.doubleLinkedList_forBooks.Book;
+import double_linked_lists.doubleLinkedList_forBooks.BookList;
 
 public class intStack {
     private final static Integer maxInteger = 20;
