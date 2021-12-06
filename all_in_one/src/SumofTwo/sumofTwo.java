@@ -1,3 +1,5 @@
+package SumofTwo;
+
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -8,13 +10,13 @@ public class sumofTwo {
 
         int[] a = {2, 7, 6, 9, 12, 4};
         int[] b = {5, 0, 3, 69, 8, 4};
-        int v = 8;
+        int v = 15;
         System.out.println(sumOfTwo(a, b, v));
     }
 
     public static boolean sumOfTwo(int[] a, int[] b, int v) {
 
-        HashSet<Integer> hash1 = new HashSet<Integer>();
+        HashSet<Integer> hash1 = new HashSet<>();
         Integer[] b_int = new Integer[b.length];
 
         //Temporary Count

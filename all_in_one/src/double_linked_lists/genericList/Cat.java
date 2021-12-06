@@ -4,12 +4,13 @@ public class Cat {
     private String string1;
     private String string2;
 
-    public Cat(){
+    public Cat() {
         this.string1 = null;
         this.string2 = null;
 
     }
-    public Cat(String string1, String string2){
+
+    public Cat(String string1, String string2) {
         this.string1 = string1;
         this.string2 = string2;
     }
@@ -32,9 +33,7 @@ public class Cat {
 
     @Override
     public String toString() {
-        return "AddAString{" +
-                "string1='" + string1 + '\'' +
-                ", string2='" + string2 + '\'' +
-                '}';
+        return "Name: " + string1 +
+                ", Cattype: " + string2;
     }
 }

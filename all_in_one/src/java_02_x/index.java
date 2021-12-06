@@ -1,3 +1,5 @@
+package java_02_x;
+
 import java.util.Scanner;
 
 public class index {

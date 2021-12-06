@@ -3,8 +3,8 @@ package double_linked_lists.wrongTry_double_linked_list_Element;
 import java.util.*;
 
 public class DoubleLinkedListAlex<T> implements Collection, List {
-    private DoubleLinkedListElement <T> start;
-    private DoubleLinkedListElement <T> end;
+    private DoubleLinkedListElement<T> start;
+    private DoubleLinkedListElement<T> end;
     int size;
 
     public DoubleLinkedListAlex() {
@@ -43,7 +43,7 @@ public class DoubleLinkedListAlex<T> implements Collection, List {
         }
 
         DoubleLinkedListElement current = start.next;
-        for (int i=0; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             current = current.next;
         }
 
@@ -156,7 +156,7 @@ public class DoubleLinkedListAlex<T> implements Collection, List {
         StringBuilder elements = new StringBuilder();
 
         elements.append("[");
-        DoubleLinkedListElement <T> current = start.next;
+        DoubleLinkedListElement<T> current = start.next;
         while (current != end) {
             elements.append(current.getValue());
             if (current.next != end)
@@ -167,7 +167,7 @@ public class DoubleLinkedListAlex<T> implements Collection, List {
         return elements.toString();
     }
 
-    private class DoubleLinkedListElement <T> {
+    private class DoubleLinkedListElement<T> {
         private T value;
         private DoubleLinkedListElement next;
         private DoubleLinkedListElement prev;
@@ -203,11 +203,11 @@ public class DoubleLinkedListAlex<T> implements Collection, List {
         }
     }
 
-    private class DoubleLinkedListIterator <T> implements Iterator, ListIterator{
+    private class DoubleLinkedListIterator<T> implements Iterator, ListIterator {
         DoubleLinkedListAlex<T>.DoubleLinkedListElement<T> cursor;
         int index;
 
-        public DoubleLinkedListIterator () {
+        public DoubleLinkedListIterator() {
             cursor = (DoubleLinkedListAlex<T>.DoubleLinkedListElement<T>) start;
             index = -1;
         }
@@ -223,7 +223,7 @@ public class DoubleLinkedListAlex<T> implements Collection, List {
         @Override
         public T previous() {
             T value = null;
-            if(hasPrevious()) {
+            if (hasPrevious()) {
                 cursor = cursor.getPrev();
                 value = cursor.getValue();
                 index--;
@@ -236,7 +236,7 @@ public class DoubleLinkedListAlex<T> implements Collection, List {
         @Override
         public int nextIndex() {
             if (hasNext())
-                return index+1;
+                return index + 1;
             else
                 return size();
         }
@@ -244,7 +244,7 @@ public class DoubleLinkedListAlex<T> implements Collection, List {
         @Override
         public int previousIndex() {
             if (hasPrevious())
-                return index-1;
+                return index - 1;
             else
                 return -1;
         }
@@ -260,7 +260,7 @@ public class DoubleLinkedListAlex<T> implements Collection, List {
         @Override
         public T next() {
             T value = null;
-            if(hasNext()) {
+            if (hasNext()) {
                 cursor = cursor.getNext();
                 value = cursor.getValue();
                 index++;

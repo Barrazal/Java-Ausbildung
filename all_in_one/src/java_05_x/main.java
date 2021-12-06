@@ -141,7 +141,7 @@ public class main {
 
         char[] letterArr = chiffre.toCharArray();
         Random num = new Random();
-        int rotation = num.nextInt(15 - 1);
+        int rotation = num.nextInt(6 - 1);
 
         // String chiffre = "Ein Charakter namens Caesar!";
         //int rotation = 2;
