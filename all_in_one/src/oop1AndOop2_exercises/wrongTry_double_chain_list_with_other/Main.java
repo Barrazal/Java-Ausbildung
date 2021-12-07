@@ -1,4 +1,4 @@
-package double_linked_lists.wrongTry_double_chain_list_with_other;
+package oop1AndOop2_exercises.wrongTry_double_chain_list_with_other;
 public class Main {
     public static void main(String[] args) {
 

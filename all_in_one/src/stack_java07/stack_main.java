@@ -2,7 +2,7 @@ package stack_java07;
 
 public class stack_main {
     public static void main(String[] args) throws StackTooSmallException {
-        intStack stack1 = new intStack();
+        intStack_outdated stack1 = new intStack_outdated();
 
         stack1.push(1, "stack_push1", "stack-585-wet-588", true);
         stack1.push(2, "stack_push2", "stack-585-wet-588", true);

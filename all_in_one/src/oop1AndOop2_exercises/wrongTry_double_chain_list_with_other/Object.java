@@ -1,15 +1,15 @@
-package double_linked_lists.wrongTry_double_chain_list_with_other;
-public class Element {
+package oop1AndOop2_exercises.wrongTry_double_chain_list_with_other;
+public class Object {
     String obj;
-    Element nextElem, prevElem;
+    Object nextElem, prevElem;
 
-    public Element(){
+    public Object(){
         this.obj = null;
         this.nextElem = null;
         this.prevElem = null;
     }
 
-    public Element(String obj) {
+    public Object(String obj) {
         this.obj = obj;
         this.nextElem = null;
         this.prevElem = null;
@@ -19,11 +19,11 @@ public class Element {
         return obj;
     }
 
-    public Element getNextElem() {
+    public Object getNextElem() {
         return nextElem;
     }
 
-    public Element getPrevElem() {
+    public Object getPrevElem() {
         return prevElem;
     }
 
@@ -31,11 +31,11 @@ public class Element {
         this.obj = obj;
     }
 
-    public void setNextElem(Element nextElem) {
+    public void setNextElem(Object nextElem) {
         this.nextElem = nextElem;
     }
 
-    public void setPrevElem(Element prevElem) {
+    public void setPrevElem(Object prevElem) {
         this.prevElem = prevElem;
     }
 }

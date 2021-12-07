@@ -1,4 +1,4 @@
-package double_linked_lists.doubleLinkedList_forBooks;
+package oop1AndOop2_exercises.doubleLinkedList_forBooks;
 
 public class testBench {
     public static void main(String[] args) {

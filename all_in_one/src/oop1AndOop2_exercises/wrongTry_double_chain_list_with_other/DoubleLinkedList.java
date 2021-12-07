@@ -1,15 +1,15 @@
-package double_linked_lists.wrongTry_double_chain_list_with_other;
+package oop1AndOop2_exercises.wrongTry_double_chain_list_with_other;
 public class DoubleLinkedList {
 
-    private Element start;
-    private Element end;
+    private Object start;
+    private Object end;
     private int size = 0;
 
 
     //Konstruktor
     public DoubleLinkedList() {
-        start = new Element();
-        end = new Element();
+        start = new Object();
+        end = new Object();
         start.nextElem = end;
         end.prevElem = start;
     }
@@ -17,10 +17,10 @@ public class DoubleLinkedList {
     public void addLast(String e1) {
 
         //create new Element from Object e1
-        Element add = new Element(e1);
+        Object add = new Object(e1);
 
         //Save last element in save
-        Element save = end.prevElem;
+        Object save = end.prevElem;
 
         //change pevious Element to new Element add
         end.prevElem = add;
@@ -42,10 +42,10 @@ public class DoubleLinkedList {
     public void addBefore(String before, String e1) {
 
         // create Elements actual and saveBefore
-        Element actual, saveBefore;
+        Object actual, saveBefore;
 
         //set actual to new Element e1
-        actual = new Element(e1);
+        actual = new Object(e1);
 
         //set saveBefore to first Element in List
         saveBefore = start.getNextElem();
@@ -80,9 +80,9 @@ public class DoubleLinkedList {
 
 
     public void addAfter(String after, String e1) {
-        Element actual, saveAfter, nextElement;
-        nextElement = null;
-        actual = new Element(e1);
+        Object actual, saveAfter, nextObject;
+        nextObject = null;
+        actual = new Object(e1);
         saveAfter = start.getNextElem();
 
 
@@ -90,13 +90,13 @@ public class DoubleLinkedList {
             saveAfter = saveAfter.getNextElem();
         }
         if (saveAfter != null) {
-            nextElement = saveAfter.getNextElem();
+            nextObject = saveAfter.getNextElem();
             saveAfter.setNextElem(actual);
-            actual.setNextElem(nextElement);
+            actual.setNextElem(nextObject);
             actual.setPrevElem(saveAfter);
         }
-        if (nextElement != null) {
-            nextElement.setPrevElem(actual);
+        if (nextObject != null) {
+            nextObject.setPrevElem(actual);
         }
     }
 
@@ -104,7 +104,7 @@ public class DoubleLinkedList {
 
 
     public void output() {
-        Element outputAll = start.getNextElem();
+        Object outputAll = start.getNextElem();
         while (outputAll.getNextElem() != null) {
             System.out.println("Das element hat den Wert: " + outputAll.getObj());
             outputAll = outputAll.nextElem;

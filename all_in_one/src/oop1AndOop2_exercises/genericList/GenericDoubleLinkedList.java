@@ -1,11 +1,9 @@
-package double_linked_lists.genericList;
+package oop1AndOop2_exercises.genericList;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.*;
+//Example: https://www.straub.as/c-cpp-qt-fltk/c/double-linked-list.html#:~:text=Eine%20doppelt%20verkettete%20Liste%20ist,auf%20das%20vorhergehende%20Element%20zeigt.
 
 //In Java Collections, we use T for type, K for key and V for value.
-public class GenericDoubleLinkedList<T> implements Collection, List {
+public class GenericDoubleLinkedList<T> {
     private Element<T> start;
     private Element<T> end;
     private int size;
@@ -69,8 +67,7 @@ public class GenericDoubleLinkedList<T> implements Collection, List {
         }
     }
 
-    @Override
-    public boolean add(Object element) {
+    public void add(Object element) {
         Element<T> newElem = new Element(element);
         Element<T> lastElem = end.prevElem;
         end.prevElem = newElem;
@@ -78,7 +75,6 @@ public class GenericDoubleLinkedList<T> implements Collection, List {
         newElem.setNextElem(end);
         lastElem.setNextElem(newElem);
         size++;
-        return true;
     }
 
     public void listLength() {
@@ -103,7 +99,6 @@ public class GenericDoubleLinkedList<T> implements Collection, List {
         }
     }
 
-
     public void seekList(T element) {
 
         Element<T> seekList = start.getNextElem();
@@ -122,10 +117,6 @@ public class GenericDoubleLinkedList<T> implements Collection, List {
         }
     }
 
-    {
-        System.out.println("No Elements in List!");
-    }
-
     public void seekListReverse(T element) {
         Element<T> seekListReverse = end.getPrevElem();
         if (seekListReverse.prevElem != null) {
@@ -142,26 +133,25 @@ public class GenericDoubleLinkedList<T> implements Collection, List {
         }
     }
 
-    public void delListAfter(T element){
-        Element <T> actualElement = start.getNextElem();
-        Element <T> saveNext;
+    public void delListAfter(T element) {
+        Element<T> actualElement = start.getNextElem();
+        Element<T> saveNext;
 
-        for (int i = 0; i < size; i++){
-            if (actualElement.getValue() == element){
+        for (int i = 0; i < size; i++) {
+            if (actualElement.getValue() == element) {
                 saveNext = actualElement.getNextElem();
                 actualElement.setNextElem(end);
                 end.setPrevElem(actualElement);
             }
 
 
-
-                actualElement = actualElement.getNextElem();
+            actualElement = actualElement.getNextElem();
         }
 
 
     }
 
-    @Override
+
     public boolean remove(Object element) {
         Element<T> actualElem = start.getNextElem();
         Element<T> elemBef;
@@ -181,115 +171,59 @@ public class GenericDoubleLinkedList<T> implements Collection, List {
         return false;
     }
 
-    @Override
-    public boolean addAll(int index, Collection c) {
+    public boolean removeLast() {
+        Element<T> lastElement = end.getPrevElem();
+
+        if (lastElement.getValue() != null && lastElement != start) {
+            lastElement.getPrevElem().setNextElem(lastElement.getNextElem());
+            lastElement.getNextElem().setPrevElem(lastElement.getPrevElem());
+            lastElement.setPrevElem(null);
+            lastElement.setNextElem(null);
+            size--;
+            return true;
+        }
         return false;
     }
 
-    @Override
-    public Object get(int index) {
-        return null;
+    public Element<T> getStart() {
+        return start;
     }
 
-    @Override
-    public Object set(int index, Object element) {
-        return null;
+    public void setStart(Element<T> start) {
+        this.start = start;
     }
 
-    @Override
-    public void add(int index, Object element) {
-
+    public Element<T> getEnd() {
+        return end.getPrevElem();
     }
 
-    @Override
-    public Object remove(int index) {
-        return null;
+    public void setEnd(Element<T> end) {
+        this.end = end;
     }
 
-    @Override
-    public int indexOf(Object o) {
-        return 0;
+    public int getSize() {
+        return size;
     }
 
-    @Override
-    public int lastIndexOf(Object o) {
-        return 0;
+    public void setSize(int size) {
+        this.size = size;
     }
 
-    @Override
-    public ListIterator listIterator() {
-        return null;
+    public String getListName() {
+        return listName;
     }
 
-    @Override
-    public ListIterator listIterator(int index) {
-        return null;
+    public void setListName(String listName) {
+        this.listName = listName;
     }
 
-    @Override
-    public List subList(int fromIndex, int toIndex) {
-        return null;
-    }
 
-    @Override
-    public int size() {
-        return 0;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return false;
-    }
-
-    @Override
-    public boolean contains(Object o) {
-        return false;
-    }
-
-    @Override
-    public Iterator iterator() {
-        return null;
-    }
-
-    @Override
-    public Object[] toArray() {
-        return new Object[0];
-    }
-
-    @Override
-    public boolean addAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public void clear() {
-
-    }
-
-    @Override
-    public boolean retainAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public boolean removeAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public boolean containsAll(Collection c) {
-        return false;
-    }
-
-    @Override
-    public Object[] toArray(Object[] a) {
-        return new Object[0];
-    }
-
-    private static class Element<T> {
+    //Internal Class Element
+    public static class Element<T> {
         private T value;
         private Element<T> nextElem;
         private Element<T> prevElem;
+
 
         public Element(T value) {
             this.value = value;
@@ -318,5 +252,6 @@ public class GenericDoubleLinkedList<T> implements Collection, List {
         }
 
     }
+
 
 }

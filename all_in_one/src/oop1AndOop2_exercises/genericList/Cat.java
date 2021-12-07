@@ -1,4 +1,4 @@
-package double_linked_lists.genericList;
+package oop1AndOop2_exercises.genericList;
 
 public class Cat {
     private String string1;

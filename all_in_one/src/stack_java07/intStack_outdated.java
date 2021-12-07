@@ -1,9 +1,9 @@
 package stack_java07;
 
-import double_linked_lists.doubleLinkedList_forBooks.Book;
-import double_linked_lists.doubleLinkedList_forBooks.BookList;
+import oop1AndOop2_exercises.doubleLinkedList_forBooks.Book;
+import oop1AndOop2_exercises.doubleLinkedList_forBooks.BookList;
 
-public class intStack {
+public class intStack_outdated {
     private final static Integer maxInteger = 20;
     private Book start;
     private BookList bookStack = new BookList();

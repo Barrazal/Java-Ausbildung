@@ -1,4 +1,4 @@
-package double_linked_lists.wrongTry_double_linked_list_Element;
+package oop1AndOop2_exercises.wrongTry_double_linked_list_Element;
 
 import java.util.*;
 

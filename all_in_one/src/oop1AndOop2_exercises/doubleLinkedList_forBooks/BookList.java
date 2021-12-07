@@ -1,7 +1,7 @@
 // Referenz der Uebung: https://www.straub.as/c-cpp-qt-fltk/c/double-linked-list.html#:~:text=Eine%20doppelt%20verkettete%20Liste%20ist,auf%20das%20vorhergehende%20Element%20zeigt.
 
 
-package double_linked_lists.doubleLinkedList_forBooks;
+package oop1AndOop2_exercises.doubleLinkedList_forBooks;
 
 public class BookList {
     private Book start;

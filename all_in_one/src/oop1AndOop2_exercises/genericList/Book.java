@@ -1,12 +1,9 @@
-package double_linked_lists.doubleLinkedList_forBooks;
+package oop1AndOop2_exercises.genericList;
 public class Book {
     private Integer id;
     private String name;
     private String isbn;
     private boolean available;
-    private static int count;
-    Book nextBook;
-    Book prevBook;
 
 
     public Book() {
@@ -14,8 +11,7 @@ public class Book {
         this.name = null;
         this.isbn = null;
         this.available = false;
-        this.nextBook = null;
-        this.prevBook = null;
+
     }
 
 
@@ -24,8 +20,7 @@ public class Book {
         this.name = name;
         this.isbn = isbn;
         this.available = available;
-        this.nextBook = null;
-        this.prevBook = null;
+
     }
 
     public Integer getId() {
@@ -36,28 +31,32 @@ public class Book {
         this.id = id;
     }
 
-    public Book getNextBook() {
-        return nextBook;
+    public String getName() {
+        return name;
     }
 
-    public void setNextBook(Book nextBook) {
-        this.nextBook = nextBook;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Book getPrevBook() {
-        return prevBook;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setPrevBook(Book prevBook) {
-        this.prevBook = prevBook;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
-    public void resetConnection(){
-        this.prevBook = null;
-        this.nextBook = null;
+    public boolean isAvailable() {
+        return available;
     }
 
-    public String bookOutput() {
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    @Override
+    public String toString() {
         return "id: " + id +
                 ", name: " + name +
                 ", isbn: " + isbn +
