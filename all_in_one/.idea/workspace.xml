@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3aa680ac-9f48-418f-88ea-769589299c1f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../##Coden mit Alex/##Coden mit Alex.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../##Coden mit Alex/Cinema Management mit SQl/Cinema Management mit SQl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../##Coden mit Alex/Cinema Management ohne SQL/Cinema Management ohne SQL.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../##Coden mit Alex/CollectionsListsGenerics/CollectionsListsGenerics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_in_one_new/all_in_one_new.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/all_in_one.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/BubbleSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/CustomNumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/Dictionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/DoubleLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/Element.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/Hauptprogramm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/Liste_Sortieren_Divide_and_Conquer/listSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/MathHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/Mengenlehre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/SumofTwo/sumofTwo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/TicTacToe/ChooseFieldTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/TicTacToe/GetWinnerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/TicTacToe/TicTacToe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/Unittest/CalculatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/bingo_card_generator/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/caesar_chiffre/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/divAndConq_Beispiel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/doubleLinkedList_forBooks/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/doubleLinkedList_forBooks/BookList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/doubleLinkedList_forBooks/testBench.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/genericList/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/genericList/Cat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/genericList/GenericDoubleLinkedList$Element.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/genericList/GenericDoubleLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/genericList/IntQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/genericList/IntStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/genericList/IntStack_dont_work.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/genericList/StackTooSmallException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/genericList/testBench.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/wrongTry_double_chain_list_with_other/DoubleLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/wrongTry_double_chain_list_with_other/DoubleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/wrongTry_double_chain_list_with_other/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/wrongTry_double_chain_list_with_other/MathHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/wrongTry_double_chain_list_with_other/Object.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/wrongTry_double_linked_list_Element/DoubleLinkedListAlex$DoubleLinkedListElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/wrongTry_double_linked_list_Element/DoubleLinkedListAlex$DoubleLinkedListIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/wrongTry_double_linked_list_Element/DoubleLinkedListAlex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/double_linked_lists/wrongTry_double_linked_list_Element/testBenchAlex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/fizzBuzz.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/gameOfLive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/java_01_x/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/java_02_x/index.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/java_05_x/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/java_06_x/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/listSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/mergeSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/personenverwaltung_OOP1_erstes_Beispiel/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/personenverwaltung_OOP1_erstes_Beispiel/PersonManagement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/personenverwaltung_OOP1_erstes_Beispiel/PersonTestBench.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/personenverwaltung_OOP1_erstes_Beispiel/person_test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/selectionSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/single_chain_List/SingleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/stack_java07/StackTooSmallException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/stack_java07/intStack_outdated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/stack_java07/stack_main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/sumofTwo_testing/sumofTwo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/uebung_objekt_erzeugen/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/unit_testing_TicTacToe_LisaD/ChooseFieldsTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/unit_testing_TicTacToe_LisaD/GetWinnerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/unit_testing_TicTacToe_LisaD/PrintTicTacToeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/unit_testing_TicTacToe_Test/ChooseFieldTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/unit_testing_TicTacToe_Test/GetWinnerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/all_in_one/unit_testing_TicTacToe_Test/PrintTicTacToeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Liste_Sortieren_Divide_and_Conquer/listSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mengenlehre/Mengenlehre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SumofTwo/sumofTwo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/ChooseFieldTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/GetWinnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TicTacToe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unittest/CalculatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wörterbuch DE - EN/Dictionary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bingo_card_generator/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bubble_sort-liste_sortieren/listSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bubble_sort/BubbleSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/caesar_chiffre/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/divide_and_conquer/divAndConq_Beispiel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/divide_and_conquer/mergeSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fizz_buzz/fizzBuzz.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_of_live/gameOfLive.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/insertion_sort/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java_01_x/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java_02_x/index.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java_05_x/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java_06_x/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/doubleLinkedList_forBooks/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/doubleLinkedList_forBooks/BookList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/doubleLinkedList_forBooks/testBench.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/genericList/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/genericList/Cat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/genericList/GenericDoubleLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/genericList/IntQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/genericList/IntStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/genericList/IntStack_dont_work.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/genericList/StackTooSmallException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/genericList/testBench.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/wrongTry_double_chain_list_with_other/DoubleLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/wrongTry_double_chain_list_with_other/DoubleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/wrongTry_double_chain_list_with_other/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/wrongTry_double_chain_list_with_other/MathHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/wrongTry_double_chain_list_with_other/Object.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/wrongTry_double_linked_list_Element/DoubleLinkedListAlex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/oop1AndOop2_exercises/wrongTry_double_linked_list_Element/testBenchAlex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/personenverwaltung_OOP1_erstes_Beispiel/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/personenverwaltung_OOP1_erstes_Beispiel/PersonManagement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/personenverwaltung_OOP1_erstes_Beispiel/PersonTestBench.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/personenverwaltung_OOP1_erstes_Beispiel/person_test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/selection-sort/selectionSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/single_chain_List/DoubleLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/single_chain_List/Element.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/single_chain_List/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/single_chain_List/MathHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/single_chain_List/SingleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stack_java07/StackTooSmallException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stack_java07/intStack_outdated.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stack_java07/stack_main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stack_java07/unitTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sumofTwo_testing/sumofTwo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uebung_objekt_erzeugen/CustomNumber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uebung_objekt_erzeugen/Hauptprogramm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/uebung_objekt_erzeugen/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unit_testing_TicTacToe_LisaD/ChooseFieldsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unit_testing_TicTacToe_LisaD/GetWinnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unit_testing_TicTacToe_LisaD/PrintTicTacToeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unit_testing_TicTacToe_Test/ChooseFieldTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unit_testing_TicTacToe_Test/GetWinnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unit_testing_TicTacToe_Test/PrintTicTacToeTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="21ftoUgcetOt0JsgbUpU3So4Ivi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path" value="C:\Users\Markus\Documents\### Coders.Bay\GitHub Repos\Junit" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="Repository.Attach.Sources" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Junit" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.3045977" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="double_linked_lists.genericDoubleLinkedList" />
+      <recent name="double_linked_list_Element" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ShapeTests">
+    <configuration name="ShapeTests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vererbung_ShapesTestAtLast.ShapeTests" />
+      <module name="all_in_one" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vererbung_ShapesTestAtLast.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testBench" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="double_linked_lists.genericList.testBench" />
+      <module name="all_in_one" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="double_linked_lists.genericList.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testBenchAlex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="double_linked_lists.wrongTry_double_linked_list_Element.testBenchAlex" />
+      <module name="all_in_one" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="double_linked_lists.wrongTry_double_linked_list_Element.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ShapeTests" />
+        <item itemvalue="Application.testBench" />
+        <item itemvalue="Application.testBenchAlex" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3aa680ac-9f48-418f-88ea-769589299c1f" name="Changes" comment="" />
+      <created>1638344144555</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638344144555</updated>
+      <workItem from="1638344145868" duration="12257000" />
+      <workItem from="1638430018719" duration="9709000" />
+      <workItem from="1638515841890" duration="14026000" />
+      <workItem from="1639034487970" duration="9215000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/double_linked_lists/wrongTry_double_linked_list_Element/dll_self_Element.java</url>
+          <line>218</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/double_linked_lists/wrongTry_double_linked_list_Element/dll_self_Element.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/double_linked_lists/wrongTry_double_linked_list_Element/DoubleLinkedListAlex.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/double_linked_lists/wrongTry_double_linked_list_Element/DoubleLinkedListAlex.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/double_linked_lists/wrongTry_double_linked_list_Element/DoubleLinkedListAlex.java</url>
+          <line>174</line>
+          <properties class="double_linked_lists.wrongTry_double_linked_list_Element.DoubleLinkedListAlex.DoubleLinkedListElement">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

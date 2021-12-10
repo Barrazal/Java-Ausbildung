@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/##Coden mit Alex.iml" filepath="$PROJECT_DIR$/##Coden mit Alex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cinema Management mit SQl/Cinema Management mit SQl.iml" filepath="$PROJECT_DIR$/Cinema Management mit SQl/Cinema Management mit SQl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cinema Management ohne SQL/Cinema Management ohne SQL.iml" filepath="$PROJECT_DIR$/Cinema Management ohne SQL/Cinema Management ohne SQL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CollectionsListsGenerics/CollectionsListsGenerics.iml" filepath="$PROJECT_DIR$/CollectionsListsGenerics/CollectionsListsGenerics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/VehicleManagement/VehicleManagement.iml" filepath="$PROJECT_DIR$/VehicleManagement/VehicleManagement.iml" />
+    </modules>
+  </component>
+</project>
