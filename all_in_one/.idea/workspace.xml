@@ -181,7 +181,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Junit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../all_in_one_new" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.3045977" />
@@ -252,6 +252,7 @@
       <workItem from="1638430018719" duration="9709000" />
       <workItem from="1638515841890" duration="14026000" />
       <workItem from="1639034487970" duration="9215000" />
+      <workItem from="1639381432839" duration="26000" />
     </task>
     <servers />
   </component>
@@ -268,7 +269,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
