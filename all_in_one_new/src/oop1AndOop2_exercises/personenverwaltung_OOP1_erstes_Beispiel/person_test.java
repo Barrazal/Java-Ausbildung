@@ -1,4 +1,4 @@
-package personenverwaltung_OOP1_erstes_Beispiel;
+package oop1AndOop2_exercises.personenverwaltung_OOP1_erstes_Beispiel;
 
 
 import org.junit.jupiter.api.DisplayName;

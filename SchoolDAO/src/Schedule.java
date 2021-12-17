@@ -12,7 +12,7 @@ public class Schedule {
     private ArrayList<Teacher> teacher;
 //    private ArrayList<Student> students;
 
-    private Schedule(int id, Day day, String time, SchoolSubject schoolSubject, Teacher teacher) throws Exception {
+    public Schedule(int id, Day day, String time, SchoolSubject schoolSubject, Teacher teacher) throws Exception {
         this.teacher = new ArrayList<>();
         if (id >= counter) {
             this.id = id;

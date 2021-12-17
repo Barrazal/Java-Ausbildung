@@ -13,7 +13,7 @@ public class SchoolDerbyDao implements SchoolDao {
 
     public SchoolDerbyDao(String dbName, boolean clearAll) {
         try {
-            final String DB_URL = "jdbc:derby" + dbName + ";create=true";
+            final String DB_URL = "jdbc:derby:" + dbName + ";create=true";
             this.connection = DriverManager.getConnection(DB_URL);
 
             if (clearAll) clearDatabase();
@@ -64,11 +64,11 @@ public class SchoolDerbyDao implements SchoolDao {
             sql = "CREATE TABLE teacher (id integer PRIMARY KEY, firstName char, lastName char, gender char, classLevel integer, className char)";
             executeDBStatement(sql);
 
-            sql = "CREATE TABLE teacher (id integer PRIMARY KEY, firstName char, lastName char, gender char, classLevel integer, className char)";
+            sql = "CREATE TABLE student (id integer PRIMARY KEY, firstName char, lastName char, gender char, classLevel integer, className char)";
             executeDBStatement(sql);
 
             sql = "CREATE TABLE schedule (id integer PRIMARY KEY, day char, time char, schoolSubject char, teacherID integer, FOREIGN KEY (teacherID) REFERENCES teacher(id))";
-
+            executeDBStatement(sql);
         }catch (SQLException ex) {
             System.out.println("SQL ERROR: "+ex.getMessage());
 
@@ -77,21 +77,74 @@ public class SchoolDerbyDao implements SchoolDao {
 
 
 
-
-
     @Override
     public ArrayList<Teacher> getAllTeachers() {
-        return null;
+        ArrayList<Teacher> result = new ArrayList<>();
+        String sql = "SELECT * FROM TEACHER";
+        try{
+            Statement stmt = connection.createStatement();
+            stmt.execute(sql);
+            ResultSet sqlResult = stmt.getResultSet();
+            while (sqlResult.next()){
+                int id = sqlResult.getInt("id");
+                String firstName = sqlResult.getString("firstName");
+                String lastName = sqlResult.getString("lastName");
+                String gender = sqlResult.getString("gender");
+                int classLevel = sqlResult.getInt("classLevel");
+                String className = sqlResult.getString("className");
+            }
+        }catch (SQLException ex){
+            System.out.println("ERROR: " + ex.getMessage());
+            return result;
+        }
+        return result;
     }
 
     @Override
     public ArrayList<Student> getAllStudents() {
-        return null;
+        ArrayList<Student> result = new ArrayList<>();
+        String sql = "SELECT * FROM STUDENTS";
+        try{
+            Statement stmt = connection.createStatement();
+            stmt.execute(sql);
+            ResultSet sqlResult = stmt.getResultSet();
+            while (sqlResult.next()){
+                int id = sqlResult.getInt("id");
+                String firstName = sqlResult.getString("firstName");
+                String lastName = sqlResult.getString("lastName");
+                String gender = sqlResult.getString("gender");
+                int classLevel = sqlResult.getInt("classLevel");
+                String className = sqlResult.getString("className");
+            }
+        }catch (SQLException ex){
+            System.out.println("ERROR: " + ex.getMessage());
+            return result;
+        }
+        return result;
     }
 
     @Override
-    public ArrayList<Schedule> getAllSchedules() {
-        return null;
+    public ArrayList<Schedule> getAllSchedules() throws Exception {
+        ArrayList<Schedule> result = new ArrayList<>();
+        String sql = "SELECT * FROM SCHEDULE";
+        try{
+            Statement stmt = connection.createStatement();
+            stmt.execute(sql);
+            ResultSet sqlResult = stmt.getResultSet();
+            while (sqlResult.next()){
+                int id = sqlResult.getInt("id");
+                Day day = Day.valueOf(sqlResult.getString("day"));
+                String time = sqlResult.getString("time");
+                SchoolSubject schoolSubject = SchoolSubject.valueOf(sqlResult.getString("schoolSubject"));
+                Teacher teacher = new Teacher();
+                       teacher = teacher.getId(sqlResult.getInt("teacher"));
+                result.add(new Schedule(id,day,time,schoolSubject,teacher);
+            }
+        }catch (SQLException ex){
+            System.out.println("ERROR: " + ex.getMessage());
+            return result;
+        }
+        return result;
     }
 
     @Override

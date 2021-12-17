@@ -7,7 +7,7 @@ public interface SchoolDao {
     //Create Lists for:
     public ArrayList <Teacher> getAllTeachers();
     public ArrayList <Student> getAllStudents();
-    public ArrayList <Schedule> getAllSchedules();
+    public ArrayList <Schedule> getAllSchedules() throws Exception;
 
     //ToDo: Not implemented yet!
    // public SchoolClass setClassReference(ClassLevel classLevel, ClassName className);
