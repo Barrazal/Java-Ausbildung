@@ -12,14 +12,14 @@ public class Schedule {
     private ArrayList<Teacher> teacher;
 //    private ArrayList<Student> students;
 
-    private Schedule(int id, Day day, String time, SchoolSubject schoolSubject,Teacher teacher) throws Exception {
-        this.teacher=new ArrayList<>();
+    private Schedule(int id, Day day, String time, SchoolSubject schoolSubject, Teacher teacher) throws Exception {
+        this.teacher = new ArrayList<>();
         if (id >= counter) {
-        this.id = id;
-        this.day = day;
-        this.time = time;
-        this.schoolSubject = schoolSubject;
-        if (teacher !=null)this.teacher.add(teacher);
+            this.id = id;
+            this.day = day;
+            this.time = time;
+            this.schoolSubject = schoolSubject;
+            if (teacher != null) this.teacher.add(teacher);
 
         } else {
             throw new Exception("Schedule-ID: '" + id + "' already in Use!");
@@ -27,12 +27,13 @@ public class Schedule {
 
         counter++;
     }
-    public Schedule( Day day, String time, SchoolSubject schoolSubject) throws Exception {
-        this(counter, day, time, schoolSubject,null);
+
+    public Schedule(Day day, String time, SchoolSubject schoolSubject) throws Exception {
+        this(counter, day, time, schoolSubject, null);
     }
 
     public Schedule() throws Exception {
-        this(counter, Day.NOT_SET, null, SchoolSubject.PLACEHOLDER,null);
+        this(counter, Day.NOT_SET, null, SchoolSubject.PLACEHOLDER, null);
 
     }
 
@@ -40,9 +41,9 @@ public class Schedule {
         return id;
     }
 
- public void setId(int id) {
-     this.id = id;
- }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Day getDay() {
         return day;
@@ -73,20 +74,22 @@ public class Schedule {
     }
 
     public void setTeacher(Teacher teacher) {
-
         this.teacher.add(teacher);
     }
 
+    public void removeTeacher(Teacher teacher) {
+        this.teacher.remove(teacher);
+    }
 
 
     @Override
     public String toString() {
-        return    "id:" + id +
+        return "id:" + id +
                 ", day:" + day +
                 ", time:" + time +
                 ", schoolSubject:" + schoolSubject +
                 ", teacher/s: " + teacher
-  //              + ", students=" + students
-                      ;
+                //              + ", students=" + students
+                ;
     }
 }

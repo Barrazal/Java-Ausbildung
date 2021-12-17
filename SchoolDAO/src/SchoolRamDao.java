@@ -58,13 +58,16 @@ public class SchoolRamDao implements SchoolDao {
 
     @Override
     //add an new Teacher to the Storage
-    public Teacher addTeacher(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className, boolean isTeacher) throws Exception {
-        Teacher newTeacher = new Teacher( firstName, lastName, gender, classLevel, className, isTeacher);
+    public Teacher addTeacher(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
+        Teacher newTeacher = new Teacher( firstName, lastName, gender, classLevel, className);
         return teacherStorage.put(newTeacher.getId(), newTeacher);
     }
 
     @Override
     public Teacher deleteTeacher(int id) {
+        for (Schedule sched:getAllSchedules()) {
+            this.removeScheduleTeacher(sched.getId(),id);
+        }
         return teacherStorage.remove(id);
     }
 
@@ -100,38 +103,38 @@ public class SchoolRamDao implements SchoolDao {
     }
 
     @Override
-    public Schedule addScheduleTeacher(int scheduleId, int teacherid2) {
-        Teacher localeTeacher = this.getTeacher(teacherid2);
-        Schedule localSchedule = this.getSchedule(scheduleId);
-
-        localeTeacher.setTeachesSchedule(localSchedule);
+    public void addScheduleTeacher(int scheduleID, int teacherID) {
+        Teacher localeTeacher = this.getTeacher(teacherID);
+        Schedule localSchedule = this.getSchedule(scheduleID);
+   //     localeTeacher.setTeachesSchedule(localSchedule);
         localSchedule.setTeacher(localeTeacher);
+    }
 
+    @Override
+    public ArrayList<Teacher> getScheduleTeacher(int scheduleID) {
+        return this.getSchedule(scheduleID).getTeacher();
+    }
+
+    @Override
+    public Schedule removeScheduleTeacher(int scheduleID, int teacherID) {
+        Teacher localeTeacher = this.getTeacher(teacherID);
+        Schedule localSchedule = this.getSchedule(scheduleID);
+        localSchedule.removeTeacher(localeTeacher);
         return null;
     }
 
     @Override
-    public Schedule getScheduleTeacher(Schedule id) {
+    public Schedule addScheduleStudent(Schedule scheduleID, Student studentID) {
         return null;
     }
 
     @Override
-    public Schedule removeScheduleTeacher(Schedule scheduleId, Teacher teacherid2) {
+    public Schedule getScheduleStudent(Schedule scheduleID) {
         return null;
     }
 
     @Override
-    public Schedule addScheduleStudent(Schedule scheduleId, Student studentid) {
-        return null;
-    }
-
-    @Override
-    public Schedule getScheduleStudent(Schedule scheduleId) {
-        return null;
-    }
-
-    @Override
-    public Schedule removeScheduleStudent(Schedule scheduleId, Student studentid) {
+    public Schedule removeScheduleStudent(Schedule scheduleID, Student studentID) {
         return null;
     }
 
@@ -144,12 +147,12 @@ public class SchoolRamDao implements SchoolDao {
             stringBuilder.append(arr1+"\n");
         }
 
-        stringBuilder.append("This Persons are Students:\n");
+        stringBuilder.append("\nThis Persons are Students:\n");
         for (Student arr1: this.getAllStudents()) {
             stringBuilder.append(arr1+"\n");
         }
 
-        stringBuilder.append("These are the Schedules of the classes:\n");
+        stringBuilder.append("\nThese are the Schedules of the classes:\n");
         for (Schedule arr1: this.getAllSchedules()) {
             stringBuilder.append(arr1+"\n");
         }

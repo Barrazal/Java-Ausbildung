@@ -15,7 +15,7 @@ public interface SchoolDao {
 
     //get and Set for Teacher:
     public Teacher getTeacher(int id);
-    public Teacher addTeacher(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className, boolean isTeacher) throws Exception;
+    public Teacher addTeacher(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception;
     public Teacher deleteTeacher(int id);
 
     //get and Set for Student:
@@ -29,14 +29,14 @@ public interface SchoolDao {
     public Schedule deleteSchedule(int id);
 
     //Assign Teacher to Schedule/ Output assigned Teacher
-    public Schedule addScheduleTeacher(int scheduleId, int teacherid2);
-    public Schedule getScheduleTeacher(Schedule id);
-    public Schedule removeScheduleTeacher(Schedule scheduleId, Teacher teacherid2);
+    public void addScheduleTeacher(int scheduleID, int teacherID);
+    public ArrayList<Teacher> getScheduleTeacher(int scheduleID);
+    public Schedule removeScheduleTeacher(int scheduleID, int teacherID);
 
 
     //Assign Student to Schedule/ Output assigned Student
-    public Schedule addScheduleStudent(Schedule scheduleId, Student studentid);
-    public Schedule getScheduleStudent(Schedule scheduleId);
-    public Schedule removeScheduleStudent(Schedule scheduleId, Student studentid);
+    public Schedule addScheduleStudent(Schedule scheduleID, Student studentID);
+    public Schedule getScheduleStudent(Schedule scheduleID);
+    public Schedule removeScheduleStudent(Schedule scheduleID, Student studentID);
 
 }

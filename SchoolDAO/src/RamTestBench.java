@@ -2,17 +2,17 @@ import enums.*;
 
 import java.util.ArrayList;
 
-public class TestBench {
+public class RamTestBench {
     public static void main(String[] args) throws Exception {
 
         SchoolRamDao mySchool = new SchoolRamDao();
 
 
 
-        mySchool.addTeacher("Alexander", "Gruber",Gender.MALE,ClassLevel.IN_NO_CLASS,ClassName.NOCLASS,true);
-        mySchool.addTeacher("2", "2",Gender.MALE,ClassLevel.IN_NO_CLASS,ClassName.NOCLASS,true);
-        mySchool.addTeacher("3", "3",Gender.MALE,ClassLevel.IN_NO_CLASS,ClassName.NOCLASS,true);
-        mySchool.addTeacher("4", "4",Gender.MALE,ClassLevel.IN_NO_CLASS,ClassName.NOCLASS,true);
+        mySchool.addTeacher("Alexander", "Gruber",Gender.MALE,ClassLevel.IN_NO_CLASS,ClassName.NOCLASS);
+        mySchool.addTeacher("2", "2",Gender.MALE,ClassLevel.IN_NO_CLASS,ClassName.NOCLASS);
+        mySchool.addTeacher("3", "3",Gender.MALE,ClassLevel.IN_NO_CLASS,ClassName.NOCLASS);
+        mySchool.addTeacher("4", "4",Gender.MALE,ClassLevel.IN_NO_CLASS,ClassName.NOCLASS);
 
         mySchool.addStudent( "Markus", "Neubacher", Gender.MALE, ClassLevel.THIRD_CLASS, ClassName.C);
         mySchool.addStudent("Andrea", "Bergbauer", Gender.FEMALE, ClassLevel.FIRST_CLASS, ClassName.A);
@@ -29,7 +29,11 @@ public class TestBench {
         System.out.println(mySchool);
 
         mySchool.deleteSchedule(2);
+   //     mySchool.removeScheduleTeacher(1,4);
+        mySchool.deleteTeacher(1);
 
+        System.out.println(mySchool);
+        mySchool.addTeacher("Alexander", "Gruber",Gender.MALE,ClassLevel.IN_NO_CLASS,ClassName.NOCLASS);
 
         System.out.println(mySchool);
 

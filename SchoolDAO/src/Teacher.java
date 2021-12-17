@@ -5,17 +5,15 @@ import enums.Gender;
 import java.util.ArrayList;
 
 public class Teacher extends Person{
-    boolean isTeacher;
     ArrayList<Schedule> teachesSchedule;
 
     public Teacher() throws Exception {
         super();
     }
 
-    public Teacher( String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className, boolean isTeacher) throws Exception {
+    public Teacher( String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
         super( firstName, lastName, gender, classLevel, className);
         teachesSchedule =new ArrayList<>();
-        this.isTeacher = isTeacher;
     }
 
 
@@ -83,9 +81,9 @@ public class Teacher extends Person{
         return teachesSchedule;
     }
 
-    public void setTeachesSchedule(Schedule teachesSchedule) {
-        this.teachesSchedule.add(teachesSchedule);
-    }
+  //  public void setTeachesSchedule(Schedule teachesSchedule) {
+  //      this.teachesSchedule.add(teachesSchedule);
+  //  }
 
     @Override
     public String toString() {
