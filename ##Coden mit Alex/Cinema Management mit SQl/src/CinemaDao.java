@@ -10,9 +10,13 @@ public interface CinemaDao {
     public void addShowRoom(ShowRoom showRoom);
     public ShowRoom removeShowRoom(int id);
     public ShowRoom getShowRoom(int id);
+
+
     public Seat addSeat(int showRoomId, int row, int number);
     public Seat getSeat(int id);
     public Seat getSeat(int showRoomId, int row, int seat);
+
+
     public Seat removeSeat(int seatId);
     public Movie addMovie(String title, String storyTitle, Genre genre);
     public Movie removeMovie(int id);

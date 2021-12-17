@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class CinemaManager {
     public static void main(String[] args) {
-        CinemaDao myCinema = new DerbyDaoImpl("Cinema1", true);
+        CinemaDao myCinema = new RamDaoImpl();
         // CinemaDao myCinema = new DerbyDaoImpl("Cinema1", true);
         myCinema.addShowRoom(new ShowRoom(1, "Coders.Bay, Red Box"));
         myCinema.addShowRoom(new ShowRoom(2, "Grand Garage, Magazin 3"));
