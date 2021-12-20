@@ -4,9 +4,22 @@ import enums.Gender;
 
 public class Student extends Person {
 
+    private static int counter = 1;
+
+    public Student() {
+    }
+
+    public Student(int id, String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
+        super(id, firstName, lastName, gender, classLevel, className);
+    }
+
+    public Student(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className, boolean create) throws Exception {
+        this(counter, firstName, lastName, gender, classLevel, className);
+        if (create) counter++;
+    }
 
     public Student(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
-        super( firstName, lastName, gender, classLevel, className);
+        this(firstName, lastName, gender, classLevel, className, true);
     }
 
 
@@ -80,7 +93,7 @@ public class Student extends Person {
         } else {
             genderLocale = "it";
         }
-        int inClass= 0;
+        int inClass = 0;
         if (super.getClassLevel() == ClassLevel.FIRST_CLASS) {
             inClass = 1;
         } else if (super.getClassLevel() == ClassLevel.SECOND_CLASS) {
@@ -90,6 +103,6 @@ public class Student extends Person {
         } else if (super.getClassLevel() == ClassLevel.FOURTH_CLASS) {
             inClass = 4;
         }
-        return super.toString()+"ID:" + super.getId()+" " + super.getFirstName() + " " + super.getLastName() + " and " + genderLocale + " is assigned to Class: " + inClass  + super.getClassName();
+        return super.toString() + "ID:" + super.getId() + " " + super.getFirstName() + " " + super.getLastName() + " and " + genderLocale + " is assigned to Class: " + inClass + super.getClassName();
     }
 }

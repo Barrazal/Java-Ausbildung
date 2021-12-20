@@ -14,7 +14,7 @@ public interface SchoolDao {
 
 
     //get and Set for Teacher:
-    public Teacher getTeacher(int id);
+    public Teacher getTeacher(int id) throws Exception;
     public Teacher addTeacher(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception;
     public Teacher deleteTeacher(int id);
 

@@ -3,7 +3,6 @@ import enums.ClassName;
 import enums.Gender;
 
 public abstract class Person {
-    private static int counter = 1;
     private int id;
     private String firstName;
     private String lastName;
@@ -11,28 +10,17 @@ public abstract class Person {
     private ClassLevel classLevel;
     private ClassName className;
 
-    private Person(int id, String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className, boolean create) throws Exception {
-
-        if (id >= counter) {
+    public Person(int id, String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
             this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;
             this.gender = gender;
             this.classLevel = classLevel;
             this.className = className;
-            if (create) counter++;
-        } else {
-            throw new Exception("Person-ID: '" + id + "' already in Use!");
-        }
-    }
-
-    public Person(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
-        this(counter,firstName,lastName,gender,classLevel,className,true);
 
     }
 
-    public Person() throws Exception {
-        this(counter, null, null, Gender.NOGENDER, ClassLevel.IN_NO_CLASS, ClassName.NOCLASS, true);
+    public Person() {
     }
 
     public int getId() {

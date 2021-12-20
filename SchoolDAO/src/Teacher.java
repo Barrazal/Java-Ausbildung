@@ -4,17 +4,27 @@ import enums.Gender;
 
 import java.util.ArrayList;
 
-public class Teacher extends Person{
+public class Teacher extends Person {
+    private static int counter = 1;
     ArrayList<Schedule> teachesSchedule;
 
-    public Teacher() throws Exception {
-        super();
+    public Teacher(){
     }
 
-    public Teacher( String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
-        super( firstName, lastName, gender, classLevel, className);
-        teachesSchedule =new ArrayList<>();
+    public Teacher(int id, String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
+        super(id, firstName, lastName, gender, classLevel, className);
     }
+
+    public Teacher(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className, boolean create) throws Exception {
+        this(counter, firstName, lastName, gender, classLevel, className);
+        if (create) counter++;
+    }
+
+    public Teacher(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
+        this(firstName, lastName, gender, classLevel, className, true);
+    }
+
+
 
 
     @Override
@@ -81,9 +91,9 @@ public class Teacher extends Person{
         return teachesSchedule;
     }
 
-  //  public void setTeachesSchedule(Schedule teachesSchedule) {
-  //      this.teachesSchedule.add(teachesSchedule);
-  //  }
+    //  public void setTeachesSchedule(Schedule teachesSchedule) {
+    //      this.teachesSchedule.add(teachesSchedule);
+    //  }
 
     @Override
     public String toString() {
@@ -95,8 +105,17 @@ public class Teacher extends Person{
         } else {
             genderLocale = "it";
         }
+        int inClass= 0;
+        if (super.getClassLevel() == ClassLevel.FIRST_CLASS) {
+            inClass = 1;
+        } else if (super.getClassLevel() == ClassLevel.SECOND_CLASS) {
+            inClass = 2;
+        } else if (super.getClassLevel() == ClassLevel.THIRD_CLASS) {
+            inClass = 3;
+        } else if (super.getClassLevel() == ClassLevel.FOURTH_CLASS) {
+            inClass = 4;
+        }
 
-
-        return super.toString()+  "ID:" + super.getId() + " "+ super.getFirstName() + " " + super.getLastName();
+        return super.toString()+ "ID:" + super.getId() + " " + super.getFirstName() + " " + super.getLastName() + " gender: "+ super.getGender() + " assigned to: " + inClass  + super.getClassName();
     }
 }

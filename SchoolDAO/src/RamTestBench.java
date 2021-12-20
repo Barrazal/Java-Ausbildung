@@ -29,11 +29,15 @@ public class RamTestBench {
         System.out.println(mySchool);
 
         mySchool.deleteSchedule(2);
-   //     mySchool.removeScheduleTeacher(1,4);
+
+        mySchool.removeScheduleTeacher(1,4);
         mySchool.deleteTeacher(1);
 
         System.out.println(mySchool);
         mySchool.addTeacher("Alexander", "Gruber",Gender.MALE,ClassLevel.IN_NO_CLASS,ClassName.NOCLASS);
+
+
+        mySchool.getTeacher(2);
 
         System.out.println(mySchool);
 
