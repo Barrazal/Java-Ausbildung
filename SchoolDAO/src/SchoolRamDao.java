@@ -59,14 +59,14 @@ public class SchoolRamDao implements SchoolDao {
     @Override
     //add an new Teacher to the Storage
     public Teacher addTeacher(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
-        Teacher newTeacher = new Teacher(firstName,lastName, gender, classLevel, className);
+        Teacher newTeacher = new Teacher(firstName, lastName, gender, classLevel, className);
         return teacherStorage.put(newTeacher.getId(), newTeacher);
     }
 
     @Override
     public Teacher deleteTeacher(int id) {
-        for (Schedule sched:getAllSchedules()) {
-            this.removeScheduleTeacher(sched.getId(),id);
+        for (Schedule sched : getAllSchedules()) {
+            this.removeScheduleTeacher(sched.getId(), id);
         }
         return teacherStorage.remove(id);
     }
@@ -78,7 +78,7 @@ public class SchoolRamDao implements SchoolDao {
 
     @Override
     public Student addStudent(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
-        Student newStudent = new Student(firstName,lastName, gender, classLevel, className);
+        Student newStudent = new Student(firstName, lastName, gender, classLevel, className);
         return studentStorage.put(newStudent.getId(), newStudent);
     }
 
@@ -93,7 +93,7 @@ public class SchoolRamDao implements SchoolDao {
     }
 
     public Schedule addSchedule(Day day, String time, SchoolSubject schoolSubject) throws Exception {
-        Schedule newSchedule = new Schedule(day,time,schoolSubject);
+        Schedule newSchedule = new Schedule(day, time, schoolSubject);
         return scheduleStorage.put(newSchedule.getId(), newSchedule);
     }
 
@@ -106,8 +106,13 @@ public class SchoolRamDao implements SchoolDao {
     public void addScheduleTeacher(int scheduleID, int teacherID) {
         Teacher localeTeacher = this.getTeacher(teacherID);
         Schedule localSchedule = this.getSchedule(scheduleID);
-   //     localeTeacher.setTeachesSchedule(localSchedule);
+        //     localeTeacher.setTeachesSchedule(localSchedule);
         localSchedule.setTeacher(localeTeacher);
+    }
+
+    @Override
+    public ArrayList<Teacher> getScheduleTeacher(Day day) {
+        return null;
     }
 
     @Override
@@ -123,42 +128,41 @@ public class SchoolRamDao implements SchoolDao {
         return null;
     }
 
-    @Override
-    public Schedule addScheduleStudent(Schedule scheduleID, Student studentID) {
-        return null;
-    }
-
-    @Override
-    public Schedule getScheduleStudent(Schedule scheduleID) {
-        return null;
-    }
-
-    @Override
-    public Schedule removeScheduleStudent(Schedule scheduleID, Student studentID) {
-        return null;
-    }
+  //  @Override
+  //  public Schedule addScheduleStudent(Schedule scheduleID, Student studentID) {
+  //      return null;
+  //  }
+//
+  //  @Override
+  //  public Schedule getScheduleStudent(Schedule scheduleID) {
+  //      return null;
+  //  }
+//
+  //  @Override
+  //  public Schedule removeScheduleStudent(Schedule scheduleID, Student studentID) {
+  //      return null;
+  //  }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
 
         stringBuilder.append("\nThis Persons are Teachers:\n");
-        for (Teacher arr1: this.getAllTeachers()) {
-            stringBuilder.append(arr1+"\n");
+        for (Teacher arr1 : this.getAllTeachers()) {
+            stringBuilder.append(arr1 + "\n");
         }
 
         stringBuilder.append("\nThis Persons are Students:\n");
-        for (Student arr1: this.getAllStudents()) {
-            stringBuilder.append(arr1+"\n");
+        for (Student arr1 : this.getAllStudents()) {
+            stringBuilder.append(arr1 + "\n");
         }
 
         stringBuilder.append("\nThese are the Schedules of the classes:\n");
-        for (Schedule arr1: this.getAllSchedules()) {
-            stringBuilder.append(arr1+"\n");
+        for (Schedule arr1 : this.getAllSchedules()) {
+            stringBuilder.append(arr1 + "\n");
         }
 
 
-
-        return " "+ stringBuilder + " ";
+        return " " + stringBuilder + " ";
     }
 }

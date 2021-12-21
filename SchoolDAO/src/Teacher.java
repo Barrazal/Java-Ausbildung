@@ -2,11 +2,9 @@ import enums.ClassLevel;
 import enums.ClassName;
 import enums.Gender;
 
-import java.util.ArrayList;
-
 public class Teacher extends Person {
+
     private static int counter = 1;
-    ArrayList<Schedule> teachesSchedule;
 
     public Teacher(){
     }
@@ -23,8 +21,6 @@ public class Teacher extends Person {
     public Teacher(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
         this(firstName, lastName, gender, classLevel, className, true);
     }
-
-
 
 
     @Override
@@ -86,14 +82,6 @@ public class Teacher extends Person {
     public void setClassName(ClassName className) {
         super.setClassName(className);
     }
-
-    public ArrayList<Schedule> getTeachesSchedule() {
-        return teachesSchedule;
-    }
-
-    //  public void setTeachesSchedule(Schedule teachesSchedule) {
-    //      this.teachesSchedule.add(teachesSchedule);
-    //  }
 
     @Override
     public String toString() {

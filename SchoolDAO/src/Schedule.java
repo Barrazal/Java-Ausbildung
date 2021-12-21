@@ -14,18 +14,27 @@ public class Schedule {
 
     public Schedule(int id, Day day, String time, SchoolSubject schoolSubject, Teacher teacher) throws Exception {
         this.teacher = new ArrayList<>();
-        if (id >= counter) {
-            this.id = id;
-            this.day = day;
-            this.time = time;
-            this.schoolSubject = schoolSubject;
-            if (teacher != null) this.teacher.add(teacher);
+        //  if (id >= counter) {
+        this.id = id;
+        this.day = day;
+        this.time = time;
+        this.schoolSubject = schoolSubject;
+        if (teacher != null) this.teacher.add(teacher);
 
-        } else {
-            throw new Exception("Schedule-ID: '" + id + "' already in Use!");
-        }
+        //  } else {
+        //      throw new Exception("Schedule-ID: '" + id + "' already in Use!");
+        //  }
 
         counter++;
+    }
+
+
+    public Schedule(Day day, String time, SchoolSubject schoolSubject, Teacher teacher) throws Exception {
+        this(counter, day, time, schoolSubject, teacher);
+    }
+
+    public Schedule(int id, Day day, String time, SchoolSubject schoolSubject) throws Exception {
+        this(id, day, time, schoolSubject, null);
     }
 
     public Schedule(Day day, String time, SchoolSubject schoolSubject) throws Exception {
@@ -90,6 +99,6 @@ public class Schedule {
                 ", schoolSubject:" + schoolSubject +
                 ", teacher/s: " + teacher
                 //              + ", students=" + students
-                ;
+                + "\n";
     }
 }

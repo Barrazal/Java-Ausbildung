@@ -9,12 +9,10 @@ public interface SchoolDao {
     public ArrayList <Student> getAllStudents();
     public ArrayList <Schedule> getAllSchedules() throws Exception;
 
-    //ToDo: Not implemented yet!
-   // public SchoolClass setClassReference(ClassLevel classLevel, ClassName className);
 
 
     //get and Set for Teacher:
-    public Teacher getTeacher(int id) throws Exception;
+    public Teacher getTeacher(int id);
     public Teacher addTeacher(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception;
     public Teacher deleteTeacher(int id);
 
@@ -31,12 +29,13 @@ public interface SchoolDao {
     //Assign Teacher to Schedule/ Output assigned Teacher
     public void addScheduleTeacher(int scheduleID, int teacherID);
     public ArrayList<Teacher> getScheduleTeacher(int scheduleID);
+    public ArrayList<Teacher> getScheduleTeacher(Day day);
     public Schedule removeScheduleTeacher(int scheduleID, int teacherID);
 
 
-    //Assign Student to Schedule/ Output assigned Student
-    public Schedule addScheduleStudent(Schedule scheduleID, Student studentID);
-    public Schedule getScheduleStudent(Schedule scheduleID);
-    public Schedule removeScheduleStudent(Schedule scheduleID, Student studentID);
+ //   //Assign Student to Schedule/ Output assigned Student
+ //   public Schedule addScheduleStudent(Schedule scheduleID, Student studentID);
+ //   public Schedule getScheduleStudent(Schedule scheduleID);
+ //   public Schedule removeScheduleStudent(Schedule scheduleID, Student studentID);
 
 }
