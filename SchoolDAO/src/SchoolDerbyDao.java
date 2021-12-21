@@ -1,5 +1,8 @@
 import enums.*;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -178,7 +181,7 @@ public class SchoolDerbyDao implements SchoolDao {
     }
 
     @Override
-    public Teacher getTeacher(int id){
+    public Teacher getTeacher(int id) {
         String sql = "SELECT * FROM teacher WHERE id = ?";
         Teacher localTeacher = null;
         try {
@@ -303,7 +306,7 @@ public class SchoolDerbyDao implements SchoolDao {
     }
 
 
-    //CREATE TABLE schedule (id integer PRIMARY KEY, day varchar(32), time varchar(32), schoolSubject varchar(32), teacherID integer, FOREIGN KEY (teacherID) REFERENCES teacher(id))
+
     @Override
     public Schedule getSchedule(int id) {
         String sql = "SELECT * FROM Schedule WHERE id = ?";
@@ -448,7 +451,7 @@ public class SchoolDerbyDao implements SchoolDao {
 
             sql = "select * from schedule where id = ?";
             stmt = connection.prepareStatement(sql);
-            stmt.setInt(1,scheduleID);
+            stmt.setInt(1, scheduleID);
             stmt.execute();
             ResultSet sqlResult = stmt.getResultSet();
             while (sqlResult.next()) {
@@ -485,9 +488,47 @@ public class SchoolDerbyDao implements SchoolDao {
 //    }
 
 
+    /*
+   CREATE TABLE teacher (id integer PRIMARY KEY, firstName varchar(32), lastName varchar(32), gender varchar(32), classLevel varchar(32), className varchar(32))
+    * */
+    public void fileExportTeacher(){
+
+        String csvFileName = "teacher_export.csv";
+        String sql = "SELECT * FROM TEACHER";
+        try{
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet sqlResult = stmt.getResultSet();
+            BufferedWriter newWriter = new BufferedWriter(new FileWriter(csvFileName));
+
+            newWriter.write("id, firstName,lastName,gender,classLevel,className");
+            while (sqlResult.next()){
+                int id = sqlResult.getInt("ID");
+                String firstName = sqlResult.getString("FIRSTNAME");
+                String lastName = sqlResult.getString("LASTNAME");
+                Gender gender = Gender.valueOf(sqlResult.getString("GENDER"));                  //Required Upper tag!?
+                ClassLevel classLevel = ClassLevel.valueOf(sqlResult.getString("CLASSLEVEL"));
+                ClassName className = ClassName.valueOf(sqlResult.getString("CLASSNAME"));
 
 
+                //string.format example: https://www.javatpoint.com/java-string-format
 
+                String line= String.format("%d,%s,%s,%s,%s,%s",id, firstName, lastName, gender, classLevel, className);
+                newWriter.newLine();
+                newWriter.write(line);
+            }
+            stmt.close();
+            newWriter.close();
+
+        } catch (SQLException e) {
+            System.out.println("Datababse error:");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("File IO error:");
+            e.printStackTrace();
+        }
+    }
+
+    //CREATE TABLE schedule (id integer PRIMARY KEY, day varchar(32), time varchar(32), schoolSubject varchar(32), teacherID integer, FOREIGN KEY (teacherID) REFERENCES teacher(id))
 
 
 

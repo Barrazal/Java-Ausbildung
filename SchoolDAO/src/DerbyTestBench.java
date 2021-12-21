@@ -43,6 +43,7 @@ public class DerbyTestBench {
 
         System.out.println("remove teacher X from Schedule Y");
         System.out.println(schoolDerbyDao.removeScheduleTeacher(1,1));
+schoolDerbyDao.fileExportTeacher();
 
 
     }
