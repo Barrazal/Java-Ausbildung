@@ -1,10 +1,9 @@
 import enums.*;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SchoolDerbyDao implements SchoolDao {
     Connection connection;
@@ -21,8 +20,8 @@ public class SchoolDerbyDao implements SchoolDao {
             if (clearAll) clearDatabase();
             initDatabase();
         } catch (Exception ex) {
-            System.out.println("Error Creating an Database!");
-            System.out.println(ex.getMessage());
+            System.out.println("Error Creating an Database: " + ex.getMessage());
+            ex.printStackTrace();
         }
     }
 
@@ -50,21 +49,24 @@ public class SchoolDerbyDao implements SchoolDao {
             sql = "DROP TABLE schedule";
             executeDBStatement(sql);
         } catch (SQLException ex) {
-            System.out.println("SQL ERROR: " + ex.getMessage());
+            System.out.println("DROP TABLE schedule ERROR: " + ex.getMessage());
+            ex.printStackTrace();
         }
 
         try {
             sql = "DROP TABLE student";
             executeDBStatement(sql);
         } catch (SQLException ex) {
-            System.out.println("SQL ERROR: " + ex.getMessage());
+            System.out.println("DROP TABLE student ERROR: " + ex.getMessage());
+            ex.printStackTrace();
         }
 
         try {
             sql = "DROP TABLE teacher";
             executeDBStatement(sql);
         } catch (SQLException ex) {
-            System.out.println("SQL ERROR: " + ex.getMessage());
+            System.out.println("DROP TABLE teacher ERROR: " + ex.getMessage());
+            ex.printStackTrace();
         }
 
     }
@@ -76,6 +78,7 @@ public class SchoolDerbyDao implements SchoolDao {
             executeDBStatement(sql);
         } catch (SQLException ex) {
             System.out.println("SQL ERROR: " + ex.getMessage());
+            ex.printStackTrace();
 
         }
 
@@ -84,6 +87,7 @@ public class SchoolDerbyDao implements SchoolDao {
             executeDBStatement(sql);
         } catch (SQLException ex) {
             System.out.println("SQL ERROR: " + ex.getMessage());
+            ex.printStackTrace();
 
         }
 
@@ -92,6 +96,7 @@ public class SchoolDerbyDao implements SchoolDao {
             executeDBStatement(sql);
         } catch (SQLException ex) {
             System.out.println("SQL ERROR: " + ex.getMessage());
+            ex.printStackTrace();
 
         }
     }
@@ -175,6 +180,7 @@ public class SchoolDerbyDao implements SchoolDao {
             }
         } catch (SQLException ex) {
             System.out.println("get All Schedules ERROR: " + ex.getMessage());
+            ex.printStackTrace();
             return result;
         }
         return result;
@@ -221,9 +227,30 @@ public class SchoolDerbyDao implements SchoolDao {
             stmt.execute();
 
         } catch (Exception ex) {
-            System.out.println("Add-Teacher ERROR: " + ex);
+            System.out.println("Add-Teacher ERROR: " + ex.getMessage());
+            ex.printStackTrace();
         }
         return localTeacher;
+    }
+
+    @Override
+    public Teacher addTeacher(Teacher teacher) throws Exception {
+        String sql = "INSERT INTO TEACHER(id, firstName, lastName, gender, classLevel, ClassName) VALUES (?,?,?,?,?,?)";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, teacher.getId());
+            stmt.setString(2, teacher.getFirstName());
+            stmt.setString(3, teacher.getLastName());
+            stmt.setString(4, teacher.getGender().toString()); //gender.toString()
+            stmt.setString(5, teacher.getClassLevel().toString()); //classLevel.toString()
+            stmt.setString(6, teacher.getClassName().toString());
+            stmt.execute();
+
+        } catch (Exception ex) {
+            System.out.println("Add-Teacher ERROR: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+        return teacher;
     }
 
     @Override
@@ -306,7 +333,6 @@ public class SchoolDerbyDao implements SchoolDao {
     }
 
 
-
     @Override
     public Schedule getSchedule(int id) {
         String sql = "SELECT * FROM Schedule WHERE id = ?";
@@ -350,7 +376,8 @@ public class SchoolDerbyDao implements SchoolDao {
             stmt.execute();
 
         } catch (Exception ex) {
-            System.out.println("Add-Schedule ERROR: " + ex);
+            System.out.println("Add-Schedule ERROR: " + ex.getMessage());
+            ex.printStackTrace();
         }
         return localSchedule;
     }
@@ -491,18 +518,35 @@ public class SchoolDerbyDao implements SchoolDao {
     /*
    CREATE TABLE teacher (id integer PRIMARY KEY, firstName varchar(32), lastName varchar(32), gender varchar(32), classLevel varchar(32), className varchar(32))
     * */
-    public void fileExportTeacher(){
 
+    //example: https://mkyong.com/java/how-to-read-and-parse-csv-file-in-java/
+    //https://stackabuse.com/reading-and-writing-csvs-in-java/
+    public void fileExportTeacher(boolean deleteOldFile) {
         String csvFileName = "teacher_export.csv";
-        String sql = "SELECT * FROM TEACHER";
-        try{
-            PreparedStatement stmt = connection.prepareStatement(sql);
-            ResultSet sqlResult = stmt.getResultSet();
-            BufferedWriter newWriter = new BufferedWriter(new FileWriter(csvFileName));
+        if (deleteOldFile) {
 
-            newWriter.write("id, firstName,lastName,gender,classLevel,className");
-            while (sqlResult.next()){
-                int id = sqlResult.getInt("ID");
+            try {
+                File csvFile = new File(csvFileName);
+                if (csvFile.delete()) {
+                    System.out.println(csvFile.getName() + " deleted");
+                } else {
+                    System.out.println(csvFile.getName() + " not deleted!");
+                }
+            } catch (Exception ex) {
+                System.out.println("Error at deleting exportTeacherFile!" + ex.getMessage());
+
+            }
+        }
+
+        String sql = "SELECT * FROM TEACHER";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.execute();
+            ResultSet sqlResult = stmt.getResultSet();
+            BufferedWriter newWriter = new BufferedWriter(new FileWriter(csvFileName,true));
+            newWriter.newLine();
+            newWriter.write("firstName,lastName,gender,classLevel,className");
+            while (sqlResult.next()) {
                 String firstName = sqlResult.getString("FIRSTNAME");
                 String lastName = sqlResult.getString("LASTNAME");
                 Gender gender = Gender.valueOf(sqlResult.getString("GENDER"));                  //Required Upper tag!?
@@ -511,8 +555,7 @@ public class SchoolDerbyDao implements SchoolDao {
 
 
                 //string.format example: https://www.javatpoint.com/java-string-format
-
-                String line= String.format("%d,%s,%s,%s,%s,%s",id, firstName, lastName, gender, classLevel, className);
+                String line = String.format("%s,%s,%s,%s,%s", firstName, lastName, gender, classLevel, className);
                 newWriter.newLine();
                 newWriter.write(line);
             }
@@ -520,17 +563,61 @@ public class SchoolDerbyDao implements SchoolDao {
             newWriter.close();
 
         } catch (SQLException e) {
-            System.out.println("Datababse error:");
+            System.out.println("Export Teacher- Database error:");
             e.printStackTrace();
         } catch (IOException e) {
-            System.out.println("File IO error:");
+            System.out.println("Export Teacher-File IO error:");
+            e.printStackTrace();
+        }
+    }
+
+    public void fileImportTeacher() {
+        ArrayList<Teacher> localeTeacher = new ArrayList<>();
+        String[] data;
+        String row;
+        try {
+            BufferedReader csvFile = new BufferedReader(new FileReader("teacher_export.csv"));
+            while ((row = csvFile.readLine()) != null) {
+                data = row.split(",");
+                if (!data[0].equals("firstName") && !data[0].equals("")) {
+                    String firstName = data[0];
+                    String lastName = data[1];
+                    Gender gender = Gender.valueOf(data[2]);
+                    ClassLevel classLevel = ClassLevel.valueOf(data[3]);
+                    ClassName className = ClassName.valueOf(data[4]);
+                    this.addTeacher(new Teacher(firstName, lastName, gender, classLevel, className));
+                }
+            }
+            for (int i = 0; i < localeTeacher.size(); i++) {
+                this.addTeacher(localeTeacher.get(i));
+            }
+            //first insert Statement for fileImport!
+        /*
+            for (int i = 0; i < localeTeacher.size(); i++) {
+            String sql = "INSERT INTO TEACHER(id, firstName, lastName, gender, classLevel, ClassName) VALUES (?,?,?,?,?,?)";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, localeTeacher.get(i).getId());
+            stmt.setString(2, localeTeacher.get(i).getFirstName());
+            stmt.setString(3, localeTeacher.get(i).getLastName());
+            stmt.setString(4, localeTeacher.get(i).getGender().toString()); //gender.toString()
+            stmt.setString(5, localeTeacher.get(i).getClassLevel().toString()); //classLevel.toString()
+            stmt.setString(6, localeTeacher.get(i).getClassName().toString());
+            stmt.execute();
+            }
+        */
+        } catch (FileNotFoundException e) {
+            System.out.println("File import TeacherError: " + e.getMessage());
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("File import TeacherError: " + e.getMessage());
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("File import TeacherError: " + e.getMessage());
             e.printStackTrace();
         }
     }
 
     //CREATE TABLE schedule (id integer PRIMARY KEY, day varchar(32), time varchar(32), schoolSubject varchar(32), teacherID integer, FOREIGN KEY (teacherID) REFERENCES teacher(id))
-
-
 
 
     @Override

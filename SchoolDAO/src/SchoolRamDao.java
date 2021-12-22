@@ -1,5 +1,9 @@
 import enums.*;
 
+import java.io.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -61,6 +65,10 @@ public class SchoolRamDao implements SchoolDao {
     public Teacher addTeacher(String firstName, String lastName, Gender gender, ClassLevel classLevel, ClassName className) throws Exception {
         Teacher newTeacher = new Teacher(firstName, lastName, gender, classLevel, className);
         return teacherStorage.put(newTeacher.getId(), newTeacher);
+    }
+    @Override
+    public Teacher addTeacher(Teacher teacher) throws Exception {
+        return teacherStorage.put(teacher.getId(), teacher);
     }
 
     @Override
@@ -142,6 +150,96 @@ public class SchoolRamDao implements SchoolDao {
   //  public Schedule removeScheduleStudent(Schedule scheduleID, Student studentID) {
   //      return null;
   //  }
+
+    public void fileExportTeacher(boolean deleteOldFile) {
+        String csvFileName = "teacher_export.csv";
+        if (deleteOldFile) {
+            try {
+                File csvFile = new File(csvFileName);
+                if (csvFile.delete()) {
+                    System.out.println(csvFile.getName() + " deleted");
+                } else {
+                    System.out.println(csvFile.getName() + " not deleted!");
+                }
+            } catch (Exception ex) {
+                System.out.println("Error at deleting exportTeacherFile!" + ex.getMessage());
+
+            }
+        }
+        ArrayList<Teacher> locArray = this.getAllTeachers();
+        try {
+            BufferedWriter newWriter = new BufferedWriter(new FileWriter(csvFileName,true));
+            newWriter.newLine();
+            newWriter.write("firstName,lastName,gender,classLevel,className");
+            for (Teacher teach: locArray) {
+
+                String firstName = teach.getFirstName();
+                String lastName = teach.getLastName();
+                Gender gender = teach.getGender();
+                ClassLevel classLevel = teach.getClassLevel();
+                ClassName className = teach.getClassName();
+
+
+                //string.format example: https://www.javatpoint.com/java-string-format
+                String line = String.format("%s,%s,%s,%s,%s", firstName, lastName, gender, classLevel, className);
+                newWriter.newLine();
+                newWriter.write(line);
+            }
+
+            newWriter.close();
+
+        } catch (IOException e) {
+            System.out.println("Export Teacher-File IO error:");
+            e.printStackTrace();
+        }
+    }
+
+    public void fileImportTeacher() {
+        ArrayList<Teacher> localeTeacher = new ArrayList<>();
+        String[] data;
+        String row;
+        try {
+            BufferedReader csvFile = new BufferedReader(new FileReader("teacher_export.csv"));
+            while ((row = csvFile.readLine()) != null) {
+                data = row.split(",");
+                if (!data[0].equals("firstName") && !data[0].equals("")) {
+                    String firstName = data[0];
+                    String lastName = data[1];
+                    Gender gender = Gender.valueOf(data[2]);
+                    ClassLevel classLevel = ClassLevel.valueOf(data[3]);
+                    ClassName className = ClassName.valueOf(data[4]);
+                    this.addTeacher(new Teacher(firstName,lastName,gender,classLevel,className));
+                }
+            }
+            for (int i = 0; i < localeTeacher.size(); i++) {
+                this.addTeacher(localeTeacher.get(i));
+            }
+            //first insert Statement for fileImport!
+        /*
+            for (int i = 0; i < localeTeacher.size(); i++) {
+            String sql = "INSERT INTO TEACHER(id, firstName, lastName, gender, classLevel, ClassName) VALUES (?,?,?,?,?,?)";
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, localeTeacher.get(i).getId());
+            stmt.setString(2, localeTeacher.get(i).getFirstName());
+            stmt.setString(3, localeTeacher.get(i).getLastName());
+            stmt.setString(4, localeTeacher.get(i).getGender().toString()); //gender.toString()
+            stmt.setString(5, localeTeacher.get(i).getClassLevel().toString()); //classLevel.toString()
+            stmt.setString(6, localeTeacher.get(i).getClassName().toString());
+            stmt.execute();
+            }
+        */
+        } catch (FileNotFoundException e) {
+            System.out.println("File import TeacherError: " + e.getMessage());
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("File import TeacherError: " + e.getMessage());
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("File import TeacherError: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public String toString() {

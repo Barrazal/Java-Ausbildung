@@ -35,6 +35,10 @@ public class RamTestBench {
 
         System.out.println(schoolRamDao);
 
+schoolRamDao.fileExportTeacher(true);
+        schoolRamDao.fileImportTeacher();
+        System.out.println(schoolRamDao);
+
     }
 
 }
